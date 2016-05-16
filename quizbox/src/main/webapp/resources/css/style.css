@@ -2,7 +2,11 @@
 
 .footer {
     position: fixed;
-    height: 100px;
+    height: 40px;
     bottom: 0;
     width: 100%;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
 }
