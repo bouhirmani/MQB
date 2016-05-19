@@ -14,13 +14,13 @@ CREATE TABLE IF NOT EXISTS `quiz` (
   `Background_Color` varchar(10) NOT NULL,
   `Button_Color` varchar(10) NOT NULL,
   `Button_Text` varchar(50) NOT NULL,
-  `Cover_Photo` byte NOT NULL, 
+  `Cover_Photo` blob NOT NULL, 
   `Font_Color` varchar(10) NOT NULL,
   `Font_Type` varchar(50) NOT NULL,
   `Description` varchar(256),
   `Title` varchar(256),
   `Text_Color` varchar(10) NOT NULL,
-  `Logo` byte NOT NULL, 
+  `Logo` blob NOT NULL, 
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `quiz` (
 CREATE TABLE IF NOT EXISTS `question` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Text` varchar(50) NOT NULL,
-  `Photo` byte NOT NULL, 
+  `Photo` blob NOT NULL, 
   `Coefficient` int NOT NULL,
   `Id_Quiz` int NOT NULL,
   PRIMARY KEY (`Id`)
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `question` (
 CREATE TABLE IF NOT EXISTS `result` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Text` varchar(50) NOT NULL,
-  `Photo` byte NOT NULL, 
+  `Photo` blob NOT NULL, 
   `Id_Quiz` int NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `result_correlation` (
 CREATE TABLE IF NOT EXISTS `choice` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Text` varchar(50) NOT NULL,
-  `Photo` byte NOT NULL,
+  `Photo` blob NOT NULL,
   `Id_Question` int NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
