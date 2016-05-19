@@ -1,18 +1,67 @@
 package model;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class ResultCorelation {
 
-	private int id;
-	private int id_choice;
-	private int id_result;
+	@Id
+	@GeneratedValue(strategy =IDENTITY)
+	@Column(name = "Id", unique = true, nullable = false)
+	private Integer id;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "Id_Choice", nullable = false)
+	private Choice choice;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "Id_Result", nullable = false)
+	private Result result;
+	
+	@Column(name = "Nb_Point", nullable = false)
 	private int nbPoint;
 
 	public ResultCorelation(){
 
 	}
 
-	public void finalize() throws Throwable {
-
+	public Integer getId() {
+		return id;
 	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Choice getChoice() {
+		return choice;
+	}
+
+	public void setChoice(Choice choice) {
+		this.choice = choice;
+	}
+
+	public Result getResult() {
+		return result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public int getNbPoint() {
+		return nbPoint;
+	}
+
+	public void setNbPoint(int nbPoint) {
+		this.nbPoint = nbPoint;
+	}
+
 
 }
