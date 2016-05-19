@@ -1,4 +1,4 @@
-package model;
+package fr.marketing.quizbox.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

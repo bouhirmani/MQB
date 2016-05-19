@@ -1,4 +1,4 @@
-package model;
+package fr.marketing.quizbox.model;
 
 import java.util.HashSet;
 import java.util.Set;

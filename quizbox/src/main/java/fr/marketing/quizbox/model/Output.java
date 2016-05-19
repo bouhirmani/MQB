@@ -1,4 +1,4 @@
-package model;
+package fr.marketing.quizbox.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -17,32 +17,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "result")
-public class Result implements Serializable{
+@Table(name = "output")
+public class Output implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy =IDENTITY)
 	@Column(name = "Id", unique = true, nullable = false)
 	private Integer id;
 	
-	@Column(name = "Text", nullable = false, length = 50)
-	private String text;
+	@Column(name = "Id_Result", nullable = false)
+	private int id_result;
 	
-	@Column(name = "Photo", nullable = false)
-	private byte photo;
+	@Column(name = "Score", nullable = false)
+	private int score;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Id_Quiz", nullable = false)
 	private Quiz quiz;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "result")
-	private Set<ResultCorelation> resultCorelations = new HashSet<ResultCorelation>(0);
-	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "Id_Output", nullable = false)
-//	private Output output;
 
-	public Result(){
+	public Output(){
 
 	}
 
@@ -54,20 +47,20 @@ public class Result implements Serializable{
 		this.id = id;
 	}
 
-	public String getText() {
-		return text;
+	public int getId_result() {
+		return id_result;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setId_result(int id_result) {
+		this.id_result = id_result;
 	}
 
-	public byte getPhoto() {
-		return photo;
+	public int getScore() {
+		return score;
 	}
 
-	public void setPhoto(byte photo) {
-		this.photo = photo;
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public Quiz getQuiz() {
@@ -76,14 +69,6 @@ public class Result implements Serializable{
 
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
-	}
-
-	public Set<ResultCorelation> getResultCorelations() {
-		return resultCorelations;
-	}
-
-	public void setResultCorelations(Set<ResultCorelation> resultCorelations) {
-		this.resultCorelations = resultCorelations;
 	}
 
 
