@@ -1,4 +1,4 @@
-
+<jsp:include page="/template/main.jsp">
 <!-- Page Content -->
 <div class="row" ng-app="myApp">
 	<div class="col-sm-8 col-sm-offset-2">
@@ -50,4 +50,4 @@
  </pre>
 	</div>
 </div>
-
+</jsp:include>
