@@ -15,6 +15,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import fr.marketing.quizbox.dao.ChoiceDao;
+import fr.marketing.quizbox.dao.ChoiceDaoImpl;
+import fr.marketing.quizbox.service.ChoiceService;
+import fr.marketing.quizbox.service.ChoiceServiceImpl;
+import fr.marketing.quizbox.service.QuestionService;
+import fr.marketing.quizbox.service.QuestionServiceImpl;
+import fr.marketing.quizbox.service.QuizService;
+import fr.marketing.quizbox.service.QuizServiceImpl;
+import fr.marketing.quizbox.service.ResultCorrelationService;
+import fr.marketing.quizbox.service.ResultCorrelationServiceImpl;
+import fr.marketing.quizbox.service.ResultService;
+import fr.marketing.quizbox.service.ResultServiceImpl;
+
 //import com.websystique.springmvc.converter.RoleToUserProfileConverter;
 
 
@@ -77,5 +90,32 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     public void configurePathMatch(PathMatchConfigurer matcher) {
         matcher.setUseRegisteredSuffixPatternMatch(true);
     }
+    @Bean
+    public QuizService quizService() {
+        return new QuizServiceImpl();
+    }
+    @Bean
+    public ChoiceService choiceService() {
+        return new ChoiceServiceImpl();
+    }
+    @Bean
+    public QuestionService questionService() {
+        return new QuestionServiceImpl();
+    }
+    @Bean
+    public ResultService resultService() {
+        return new ResultServiceImpl();
+    }
+    @Bean
+    public ResultCorrelationService correlationService() {
+        return new ResultCorrelationServiceImpl();
+    }
+    
+    @Bean
+    public ChoiceDao choiceDao() {
+        return new ChoiceDaoImpl();
+    }
+    
+    
 }
 

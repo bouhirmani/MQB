@@ -25,14 +25,14 @@ public class HibernateConfiguration {
     @Autowired
     private Environment environment;
 
-    @Bean
-    public LocalSessionFactoryBean sessionFactory() {
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "fr.marketing.quizbox.model" });
-        sessionFactory.setHibernateProperties(hibernateProperties());
-        return sessionFactory;
-     }
+//    @Bean
+//    public LocalSessionFactoryBean sessionFactory() {
+//        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+//        sessionFactory.setDataSource(dataSource());
+//        sessionFactory.setPackagesToScan(new String[] { "fr.marketing.quizbox.model" });
+//        sessionFactory.setHibernateProperties(hibernateProperties());
+//        return sessionFactory;
+//     }
 	
     @Bean
     public DataSource dataSource() {
@@ -52,12 +52,12 @@ public class HibernateConfiguration {
         return properties;        
     }
     
-	@Bean
-    @Autowired
-    public HibernateTransactionManager transactionManager(SessionFactory s) {
-       HibernateTransactionManager txManager = new HibernateTransactionManager();
-       txManager.setSessionFactory(s);
-       return txManager;
-    }
+//	@Bean
+//    @Autowired
+//    public HibernateTransactionManager transactionManager(SessionFactory s) {
+//       HibernateTransactionManager txManager = new HibernateTransactionManager();
+//       txManager.setSessionFactory(s);
+//       return txManager;
+//    }
 }
 
