@@ -9,6 +9,8 @@
 	href="<c:url value='/resources/css/creationStyle.css'/>" />
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/darkly/bootstrap.min.css">
 
+<link rel="stylesheet" href="<c:url value='/resources/font-awesome/css/font-awesome.css'/>" />
+
 <script type="text/javascript" src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/resources/js/jscolor.min.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/>" > </script>
@@ -19,6 +21,8 @@
 
 <script type="text/javascript" src="<c:url value='/scripts/app.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/scripts/controllers.js'/>" > </script>
+
+
 
 
 </head>

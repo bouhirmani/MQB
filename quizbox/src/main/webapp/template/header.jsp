@@ -9,23 +9,19 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="http://marketing-pipeline.com/"><h:graphicImage alt="Brand" value="/resources/img/Logo.png" /></a>
+               <a class="navbar-brand" href="http://marketing-pipeline.com/"><img alt="Brand" src="/resources/img/logo.png" /></a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                    <li>
-                   	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiz <span class="caret"></span></a>
-      					<ul class="dropdown-menu">
-			            <li><a href="quiz/createQuiz.xhtml"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Créer un nouveau Quiz</a></li>
-			            <li><a href="#">Mes Quiz Publiés </a></li>
-					</ul>                        
+                   		<a href="#"><span class="fa fa-home fa-4" aria-hidden="true"></span></a>
                    </li>
                    <li>
-                       <a href="#">Services</a>
+                       <a href="#"></a>
                    </li>
                    <li>
-                       <a href="#">Contact</a>
+                       <a href="#"></a>
                    </li>
                </ul>
            </div>
