@@ -9,35 +9,35 @@ App.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     
         // route to show our basic form (/form)
-        .state('form', {
-            url: '/form',
-            templateUrl: 'form.html',
+        .state('form.creation', {
+            url: '/',
+            templateUrl: 'form-creation.jsp',
             controller: 'formController'
         })
         
         // nested states 
         // each of these sections will have their own view
         // url will be nested (/form/profile)
-        .state('form.profile', {
-            url: '/profile',
-            templateUrl: 'form-profile.html'
+        .state('form.debut', {
+            url: '/debut',
+            templateUrl: 'form-debut.jsp'
         })
         
         // url will be /form/interests
-        .state('form.interests', {
-            url: '/interests',
-            templateUrl: 'form-interests.html'
+        .state('form.contenu', {
+            url: '/contenu',
+            templateUrl: 'form-.'
         })
         
         // url will be /form/payment
-        .state('form.payment', {
-            url: '/payment',
-            templateUrl: 'form-payment.html'
+        .state('form.publication', {
+            url: '/publication',
+            templateUrl: 'form-publication.jsp'
         });
        
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('/form/profile');
+    //$urlRouterProvider.otherwise('/');
 })
 
 

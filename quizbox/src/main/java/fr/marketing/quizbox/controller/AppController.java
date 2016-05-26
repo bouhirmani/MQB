@@ -22,19 +22,13 @@ import fr.marketing.quizbox.service.QuizService;
 
 
 @Controller
-//@RequestMapping("/")
-//@SessionAttributes("roles")
+@RequestMapping("/")
+@SessionAttributes("roles")
 public class AppController {
 
-//	@Autowired
-//	QuizService quizService;
-//	
-//	@Autowired
-//	QuestionService questionService;
-//	
-//	
-//	@Autowired
-//	MessageSource messageSource;
-
+	 @RequestMapping(method = RequestMethod.GET)
+	    public String getIndexPage() {
+	        return "index";
+	    }
 
 }
