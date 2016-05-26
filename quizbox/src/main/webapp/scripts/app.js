@@ -1,4 +1,3 @@
-'use strict';
 
 var App = angular.module('myApp',['ngAnimate', 'ui.router']);
 
@@ -9,35 +8,34 @@ App.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     
         // route to show our basic form (/form)
-        .state('form.creation', {
-            url: '/',
-            templateUrl: 'form-creation.jsp',
-            controller: 'formController'
-        })
-        
+//        .state('form', {
+//            url: '/',
+//            templateUrl: 'quiz/form.jsp',
+//            controller: 'formController'
+//        })
         // nested states 
         // each of these sections will have their own view
         // url will be nested (/form/profile)
-        .state('form.debut', {
-            url: '/debut',
-            templateUrl: 'form-debut.jsp'
+        .state('debut', {
+            url: 'debut',
+            templateUrl: 'quiz/form-debut.jsp'
         })
         
         // url will be /form/interests
-        .state('form.contenu', {
-            url: '/contenu',
-            templateUrl: 'form-.'
+        .state('contenu', {
+            url: 'contenu',
+            templateUrl: 'quiz/form-contenu.jsp'
         })
         
         // url will be /form/payment
-        .state('form.publication', {
-            url: '/publication',
-            templateUrl: 'form-publication.jsp'
+        .state('publication', {
+            url: 'publication',
+            templateUrl: 'quiz/form-publication.jsp'
         });
        
     // catch all route
     // send users to the form page 
-    //$urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 })
 
 

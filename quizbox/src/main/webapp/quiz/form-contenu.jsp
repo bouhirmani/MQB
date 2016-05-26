@@ -10,7 +10,7 @@
 
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.publication" class="btn btn-block btn-info">
+    <a ui-sref="publication" class="btn btn-block btn-info">
     Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
