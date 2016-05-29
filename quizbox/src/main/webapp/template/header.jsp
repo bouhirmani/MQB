@@ -9,13 +9,14 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="http://marketing-pipeline.com/"><img alt="Brand" src="/resources/img/logo.png" /></a>
+               <a class="navbar-brand" href="http://marketing-pipeline.com/">
+               <img alt="Brand" src="./resources/img/logo.png" /></a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                    <li>
-                   		<a href="#"><span class="fa fa-home fa-4" aria-hidden="true"></span></a>
+                   		<a href="#"><span class="fa fa-home fa-3" aria-hidden="true"></span></a>
                    </li>
                    <li>
                        <a href="#"></a>
