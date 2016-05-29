@@ -5,8 +5,13 @@
 <html>
 <head>
 <title>${param.title}</title>
+
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/style.css'/>" />
+
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css/creationStyle.css'/>" />
+	
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" />
 
@@ -28,7 +33,7 @@
 
 	<jsp:include page="/template/header.jsp"/>
 	<br />
-	<jsp:include page="/quiz/form.jsp"/>
+	<jsp:include page="/quiz/home.jsp"/>
 	
 	<jsp:include page="/template/footer.jsp"/>
 	
