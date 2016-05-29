@@ -9,5 +9,19 @@
 }
 
 .mynav {
-	height: 70px;
+	height: 80px;
+}
+
+.myusernav {
+	
+	color: white;
+}
+.nav > li > a:hover{
+	background-color: #bc2121;
+	color: white;
+}
+
+.nav .open > a:hover,
+.nav .open > a {
+  background-color: #bc2121;
 }
