@@ -3,31 +3,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                   <span class="sr-only">Toggle navigation</span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand" href="http://marketing-pipeline.com/">
-               <img class ="logo" alt="Brand" src="<c:url value='/resources/img/logoMQB.png'/>"/></a>
-           </div>
-           <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <ul class="nav navbar-nav">
-                   <li>
-                   		<a href="#"><span class="fa fa-home fa-3" aria-hidden="true"></span></a>
-                   </li>
-                   <li>
-                       <a href="#"></a>
-                   </li>
-                   <li>
-                       <a href="#"></a>
-                   </li>
-               </ul>
-           </div>
-           <!-- /.navbar-collapse -->
+
+               <a class="navbar-brand mynav" href="http://marketing-pipeline.com/">
+               <img class ="img-responsive logo" alt="Brand" src="<c:url value='/resources/img/logoMQB.png'/>"/></a>
        </div>
+
        <!-- /.container -->
    </nav>
