@@ -14,6 +14,9 @@
 	
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" />
+	
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/header.css'/>" />
 
 <link rel="stylesheet" href="<c:url value='/resources/font-awesome/css/font-awesome.css'/>" />
 

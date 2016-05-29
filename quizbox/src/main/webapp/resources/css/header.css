@@ -1,0 +1,9 @@
+@CHARSET "ISO-8859-1";
+.header {
+	background-color: #db2f2f;
+}
+
+.logo {
+	width:20%;
+	height: auto; 
+}
