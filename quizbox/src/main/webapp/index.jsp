@@ -5,15 +5,12 @@
 <html>
 <head>
 <title>${param.title}</title>
-
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/style.css'/>" />
-
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/creationStyle.css'/>" />
 	
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" />
+
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/style.css'/>" />
 	
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css/header.css'/>" />
