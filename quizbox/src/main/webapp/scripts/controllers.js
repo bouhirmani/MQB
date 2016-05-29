@@ -1,5 +1,3 @@
-'use strict';
-
 App.controller('formController', ['$scope', '$http', function($scope, $http) {
 
 		$scope.formData = {};
@@ -8,4 +6,10 @@ App.controller('formController', ['$scope', '$http', function($scope, $http) {
 	    $scope.processForm = function() {
 	        alert('awesome!');  
 	    };
+}]);
+
+App.controller('animationCtrl', ['$scope', '$http', function($scope, $http) {
+	  
+	  $scope.animation = false;
+
 }]);
