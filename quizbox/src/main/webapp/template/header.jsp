@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
        <div class="container">
@@ -10,7 +11,7 @@
                    <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand" href="http://marketing-pipeline.com/">
-               <img class ="logo" alt="Brand" src="./resources/img/logoMQB.png" /></a>
+               <img class ="logo" alt="Brand" src="<c:url value='/resources/img/logoMQB.png'/>"/></a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
