@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>${param.title}</title>
+<title>Quiz Box</title>
 	
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" />
@@ -17,25 +17,27 @@
 
 <link rel="stylesheet" href="<c:url value='/resources/font-awesome/css/font-awesome.css'/>" />
 
+
+</head>
+<body ng-app="myApp">
+
+	<div ng-include='"<c:url value='/template/header.jsp'/>"'></div>
+	<div ng-view></div>
+	<div ng-include='"<c:url value='/template/footer.jsp'/>"'></div>
+
+
+
 <script type="text/javascript" src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/resources/js/jscolor.min.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/>" > </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
 
 <script type="text/javascript" src="<c:url value='/scripts/app.js'/>" > </script>
 <script type="text/javascript" src="<c:url value='/scripts/controllers.js'/>" > </script>
 
-</head>
-<body ng-app="myApp">
 
-	<jsp:include page="/template/header.jsp"/>
-	<br />
-	<jsp:include page="/quiz/home.jsp"/>
-	
-	<jsp:include page="/template/footer.jsp"/>
-	
 </body>
 </html>

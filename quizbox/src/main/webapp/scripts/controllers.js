@@ -21,7 +21,5 @@ App.controller('formDebutCtrl', ['$scope', '$http', function($scope, $http) {
 	  $scope.colorTextButtonCreatQuiz = 'TAKE QUIZ';
 	  $scope.colorBackground = '#F5A345';
 	  
-	  
-	  
 
 }]);

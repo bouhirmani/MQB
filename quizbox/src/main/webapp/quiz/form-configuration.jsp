@@ -1,71 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>${param.title}</title>
-
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" />
-
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/style.css'/>" />
-
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/header.css'/>" />
-
-<link rel="stylesheet"
-	href="<c:url value='/resources/font-awesome/css/font-awesome.css'/>" />
-
-<script type="text/javascript"
-	src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>">
-	
-</script>
-<script type="text/javascript"
-	src="<c:url value='/resources/js/jscolor.min.js'/>">
-	
-</script>
-<script type="text/javascript"
-	src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/>">
-	
-</script>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-<script
-	src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-
-<script type="text/javascript" src="<c:url value='/scripts/app.js'/>">
-	
-</script>
-<script type="text/javascript"
-	src="<c:url value='/scripts/controllers.js'/>">
-	
-</script>
-
-</head>
-<body ng-app="myApp">
-
-	<jsp:include page="/template/header.jsp" />
-	<br />
-
-	<div id="edit-container" ng-controller="formDebutCtrl">
-		<div class="col-md-4">
-	
+<div id="edit-container" ng-controller="formDebutCtrl">
+	<div class="col-md-4">
 		<div id="customize-btns">
 			<div class="customize-btns">
 				<div id="customize-options">
 					<div class="disabled-options">
 						<p class="item-heading">Custom Logo</p>
 						<div class="item-options">
-						<a role="button" class="edit-link cover-btn"><i
-							class="fa fa-circle fa-fw"></i> Edit</a> <a role="button"
-							class="edit-link remove-cover-btn"><i
-							class="fa fa-circle fa-fw"></i> Remove</a>
-					</div>
+							<a role="button" class="edit-link cover-btn"><i
+								class="fa fa-circle fa-fw"></i> Edit</a> <a role="button"
+								class="edit-link remove-cover-btn"><i
+								class="fa fa-circle fa-fw"></i> Remove</a>
+						</div>
 
 					</div>
 					<p class="item-heading">Cover Photo</p>
@@ -75,7 +20,7 @@
 							class="edit-link remove-cover-btn"><i
 							class="fa fa-circle fa-fw"></i> Remove</a>
 					</div>
-					
+
 					<p class="item-heading">Background Color</p>
 					<div class="item-options">
 						<div>
@@ -84,7 +29,7 @@
 							<input id="valueInputBg" ng-model="colorBackground"></input>
 						</div>
 					</div>
-	
+
 					<p class="item-heading">Font Color</p>
 					<div class="item-options">
 						<div>
@@ -99,20 +44,22 @@
 						<a role="button" id="font-type-btn" class="edit-link"><i
 							class="fa fa-circle fa-fw"></i> Edit</a>
 					</div>
-					
+
 					<p class="item-heading">Button Color</p>
 					<div class="item-options">
 						<div>
 							<input id="styleInputButton"
 								class="form-control jscolor {valueElement:'valueInputButton', styleElement:'styleInputButton' , hash:true} color-preview"></input>
-							<input id="valueInputButton"  ng-model="colorButtonCreatQuiz" value="#db2f2f"></input>
+							<input id="valueInputButton" ng-model="colorButtonCreatQuiz"
+								value="#db2f2f"></input>
 						</div>
 					</div>
-					
+
 					<p class="item-heading">Button Text</p>
 					<div class="item-options">
 						<input type="text" id="btn-text-input" class="form-control"
-							value="" placeholder="Button Text" ng-model="colorTextButtonCreatQuiz">
+							value="" placeholder="Button Text"
+							ng-model="colorTextButtonCreatQuiz">
 					</div>
 				</div>
 
@@ -123,7 +70,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
-									aria-hidden="true">Ã—</button>
+									aria-hidden="true">×</button>
 								<h4 class="modal-title text-center">Edit Font Type</h4>
 							</div>
 							<div class="modal-body">
@@ -160,34 +107,31 @@
 				</div>
 			</div>
 		</div>
-		</div>
-		<div class="col-md-8">
-				<div class="module-container">
-	<div class="quiz-content">
-		<div id="app-content" style="color:#609c3a">
-			<div class="start-container" ng-style="{'color': colorText, 'background-color': colorBackground}">
-				<h1 class="quiz-title">Untitled Quiz</h1>
-					<div id="app-image" >
-						<div class="quiz-image">
-							<img alt="Brand"
-								src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
+	</div>
+	<div class="col-md-8">
+		<div class="module-container">
+			<div class="quiz-content">
+				<div id="app-content" style="color: #609c3a">
+					<div class="start-container"
+						ng-style="{'color': colorText, 'background-color': colorBackground}">
+						<h1 class="quiz-title">Untitled Quiz</h1>
+						<div id="app-image">
+							<div class="quiz-image">
+								<img alt="Brand"
+									src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
+							</div>
 						</div>
+						<h2 class="quiz-subtitle">The description for your quiz will
+							go here.</h2>
+						<a class="start-app" role="button"
+							ng-style="{'background-color': colorButtonCreatQuiz}">{{colorTextButtonCreatQuiz}}</a>
 					</div>
-					<h2 class="quiz-subtitle">The description for your quiz will go here.</h2>
-				  <a class="start-app" role="button" ng-style="{'background-color': colorButtonCreatQuiz}">{{colorTextButtonCreatQuiz}}</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-	</div>
-	</div>
 
-
-
-	<jsp:include page="/template/footer.jsp" />
-
-</body>
-</html>
 
 
 
