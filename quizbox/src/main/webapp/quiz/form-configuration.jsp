@@ -23,20 +23,22 @@
 					</div>
 
 					<p class="item-heading">Background Color</p>
+					
 					<div class="item-options">
 						<div>
-							<input id="styleInputBg"
-								class="form-control jscolor {valueElement:'valueInputBg', styleElement:'styleInputBg' , hash:true} color-preview"></input>
-							<input id="valueInputBg" ng-model="colorBackground"></input>
+							<input type="text" class="form-control color-preview"
+								ng-style="{'background-color': colorBackground}"></input>
+							<input colorpicker ng-model="colorBackground" type="text" >
 						</div>
 					</div>
 
 					<p class="item-heading">Font Color</p>
 					<div class="item-options">
 						<div>
-							<input id="styleInputFont"
-								class="form-control jscolor {valueElement:'valueInputFont', styleElement:'styleInputFont' , hash:true} color-preview"></input>
-							<input id="valueInputFont" ng-model="colorText"></input>
+							<input type="text" class="form-control color-preview"
+								ng-style="{'background-color': colorText}"></input>
+							<input colorpicker ng-model="colorText" type="text" >
+							
 						</div>
 					</div>
 					<p class="item-heading">Font Type</p>
@@ -49,10 +51,9 @@
 					<p class="item-heading">Button Color</p>
 					<div class="item-options">
 						<div>
-							<input id="styleInputButton"
-								class="form-control jscolor {valueElement:'valueInputButton', styleElement:'styleInputButton' , hash:true} color-preview"></input>
-							<input id="valueInputButton" ng-model="colorButtonCreatQuiz"
-								value="#db2f2f"></input>
+							<input type="text" class="form-control color-preview"
+								ng-style="{'background-color': colorButtonCreatQuiz}"></input>
+							<input colorpicker ng-model="colorButtonCreatQuiz" type="text" >
 						</div>
 					</div>
 

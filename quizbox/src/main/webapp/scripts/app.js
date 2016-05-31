@@ -1,5 +1,5 @@
 
-var App = angular.module('myApp',['ngAnimate', 'ngRoute','ngLoadScript']);
+var App = angular.module('myApp',['ngAnimate', 'ngRoute','colorpicker.module','flow']);
 
 
 App.config(['$routeProvider', function ($routeProvider) {
