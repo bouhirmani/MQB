@@ -1,9 +1,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<div id="edit-container">
+<div id="edit-container" ng-controller="formDebutCtrl"
+	flow-init="{singleFile:true}"
+	flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
 	<div class="col-md-4">
+
 		<div id="customize-btns">
 			<div class="customize-btns">
 				<div id="customize-options">
+					<p class="item-heading">Titre du Quiz</p>
+					<div class="item-options">
+						<input type="text" class="form-control" value="" width="20px"
+							placeholder="Titre du Quiz" ng-model="titleQuiz">
+					</div>
+
+					<p class="item-heading">Description du Quiz</p>
+					<div class="item-options">
+						<!-- 							<input type="text" class="form-control" value="" -->
+						<!-- 								placeholder="Description du Quiz" ng-model="descriptionQuiz"> -->
+						<textarea class="form-control" placeholder="Description du Quiz"
+							ng-model="descriptionQuiz"></textarea>
+					</div>
 					<div class="disabled-options">
 						<p class="item-heading">Custom Logo</p>
 						<div class="item-options">
@@ -15,20 +31,29 @@
 
 					</div>
 					<p class="item-heading">Cover Photo</p>
-					<div class="item-options">
-						<a role="button" class="edit-link cover-btn"><i
-							class="fa fa-circle fa-fw"></i> Edit</a> <a role="button"
-							class="edit-link remove-cover-btn"><i
-							class="fa fa-circle fa-fw"></i> Remove</a>
+					<!-- 					<div class="item-options"> -->
+					<!-- 						<a role="button" class="edit-link cover-btn"><i -->
+					<!-- 							class="fa fa-circle fa-fw"></i> Edit</a> <a role="button" -->
+					<!-- 							class="edit-link remove-cover-btn"><i -->
+					<!-- 							class="fa fa-circle fa-fw"></i> Remove</a> -->
+					<!-- 					</div> -->
+
+					<div>
+						<span class="btn btn-primary" ng-show="!$flow.files.length"
+							flow-btn>Charger Photo</span> <span class="btn btn-info"
+							ng-show="$flow.files.length" flow-btn>Modifier Photo</span> <span
+							class="btn btn-danger" ng-show="$flow.files.length"
+							ng-click="$flow.cancel()">Supprimer Photo</span>
 					</div>
 
 					<p class="item-heading">Background Color</p>
-					
+
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-preview"
-								ng-style="{'background-color': colorBackground}"></input>
-							<input colorpicker ng-model="colorBackground" type="text" >
+								ng-style="{'background-color': colorBackground}"
+								readonly="readonly"></input> <input colorpicker
+								ng-model="colorBackground" type="text">
 						</div>
 					</div>
 
@@ -36,9 +61,9 @@
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-preview"
-								ng-style="{'background-color': colorText}"></input>
-							<input colorpicker ng-model="colorText" type="text" >
-							
+								ng-style="{'background-color': colorText}" readonly="readonly"></input>
+							<input colorpicker ng-model="colorText" type="text">
+
 						</div>
 					</div>
 					<p class="item-heading">Font Type</p>
@@ -52,17 +77,21 @@
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-preview"
-								ng-style="{'background-color': colorButtonCreatQuiz}"></input>
-							<input colorpicker ng-model="colorButtonCreatQuiz" type="text" >
+								ng-style="{'background-color': colorButtonCreatQuiz}"
+								readonly="readonly"></input> <input colorpicker
+								ng-model="colorButtonCreatQuiz" type="text">
 						</div>
 					</div>
 
 					<p class="item-heading">Button Text</p>
 					<div class="item-options">
 						<input type="text" id="btn-text-input" class="form-control"
-							value="" placeholder="Button Text"
-							ng-model="colorTextButtonCreatQuiz">
+							value="" placeholder="Button Text" ng-model="textButtonCreatQuiz">
 					</div>
+
+
+
+
 				</div>
 
 				<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog"
@@ -110,36 +139,28 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-8">
-		<div class="module-container">
-			<div class="quiz-content">
-				<div id="app-content" style="color: #609c3a">
-					<div class="start-container"
-						ng-style="{'color': colorText, 'background-color': colorBackground}">
-						<h1 class="quiz-title">Untitled Quiz</h1>
-						<div id="app-image">
-							<div class="quiz-image">
-								<img alt="Brand"
-									src="<c:url value='/resources/img/cover-placeholder.jpg' />" />
-							</div>
-						</div>
-						<h2 class="quiz-subtitle">The description for your quiz will
-							go here.</h2>
-						<a class="start-app" role="button"
-							ng-style="{'background-color': colorButtonCreatQuiz}">{{colorTextButtonCreatQuiz}}</a>
-					</div>
+
+
+	<div
+		ng-style="{'color': colorText, 'background-color': colorBackground}"
+		class="col-md-8 start-container">
+		<h1 class="quiz-title">{{titleQuiz}}</h1>
+		<div>
+			<div>
+				<div class="quiz-image" ng-show="!$flow.files.length">
+					<img alt="Brand"
+						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
+				</div>
+				<div class="quiz-image" ng-show="$flow.files.length">
+					<img flow-img="$flow.files[0]" width="500px" id="image" />
 				</div>
 			</div>
 		</div>
+		<div class=" col-md-6 col-md-offset-3 text-center ">
+			<label class="quiz-subtitle"><h2>{{descriptionQuiz}}</h2></label>
+			<button type="button" class="btn btn-lg"
+				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}">{{textButtonCreatQuiz}}</button>
+		</div>
 	</div>
+
 </div>
-
-
-
-
-
-
-
-
-
-

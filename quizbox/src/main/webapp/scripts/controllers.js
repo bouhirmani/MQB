@@ -16,10 +16,11 @@ App.controller('animationCtrl', ['$scope', '$http', function($scope, $http) {
 
 App.controller('formDebutCtrl', ['$scope', '$http', function($scope, $http) {
 	
-	  $scope.colorButtonCreatQuiz = '#db2f2f';
-	  $scope.colorText = '#db2f2f';
-	  $scope.colorTextButtonCreatQuiz = 'TAKE QUIZ';
+	  $scope.colorButtonCreatQuiz = '#337ab7';
+	  $scope.colorText = '#ffffff';
+	  $scope.textButtonCreatQuiz = 'Faire le Quiz';
 	  $scope.colorBackground = '#F5A345';
-	  
+	  $scope.titleQuiz = 'Nouveau Quiz';
+	  $scope.descriptionQuiz = 'votre description du Quiz';
 
 }]);

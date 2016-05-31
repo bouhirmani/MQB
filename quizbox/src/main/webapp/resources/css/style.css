@@ -203,7 +203,7 @@ panel.panel-default {
          
 .start-app {
     color: #fff;
-    width: 100%;
+    width: 70%;
     border-radius: 5px;
     font-size: 24px;
     font-weight: 400;
@@ -215,6 +215,7 @@ panel.panel-default {
     vertical-align: middle;
     cursor: pointer;
     text-align: center;
+    background-position: center;
     
 }
 
