@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<div id="edit-container" ng-controller="formDebutCtrl">
+<div id="edit-container">
 	<div class="col-md-4">
 		<div id="customize-btns">
 			<div class="customize-btns">
@@ -119,7 +119,7 @@
 						<div id="app-image">
 							<div class="quiz-image">
 								<img alt="Brand"
-									src="<c:url value='./resources/img/cover-placeholder.jpg'/>" />
+									src="<c:url value='/resources/img/cover-placeholder.jpg' />" />
 							</div>
 						</div>
 						<h2 class="quiz-subtitle">The description for your quiz will
