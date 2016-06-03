@@ -1,27 +1,39 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
-	<div class="container">
 
-		<ul class="nav navbar-top-links navbar-right">
-			<li class="dropdown">
-			<a role="button" class="dropdown-toggle myusernav"
-				data-toggle="dropdown" data-bypass="true"> 
-				<i class="fa fa-user fa-fw"></i>
-				<span id="header-email">email@email.com</span>
-				<i class="fa fa-caret-down"></i>
-			</a>
-				<ul class="dropdown-menu dropdown-user">
-					<li><a id="account" role="button"><i
-							class="fa fa-user fa-fw"></i> User Profile</a></li>
-					<li class="divider"></li>
-					<li><a id="logout" role="button"><i
-							class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-				</ul></li>
-		</ul>
-		<a href="http://marketing-pipeline.com/"> <img
-			class="img-responsive logo" alt="Brand"
-			src="<c:url value='/resources/img/logoMQB.png'/>" />
-		</a>
 
-	</div>
+<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://marketing-pipeline.com/">
+      <span><img class="logo"
+				alt="Brand"
+				src="<c:url value='/resources/img/logoMQB.png'/>" />
+		</span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" >
+     
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle fa fa-user " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">email@adress.com <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+						<li><a id="account" role="button"><i
+								class="fa fa-user fa-fw"></i> User Profile</a></li>
+						<li class="divider"></li>
+						<li><a id="logout" role="button"><i
+								class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+					</ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

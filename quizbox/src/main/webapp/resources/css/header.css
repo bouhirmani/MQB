@@ -1,11 +1,12 @@
 @CHARSET "ISO-8859-1";
 .header {
-	background-color: #db2f2f;
+	background-color: #262626;
+/* 	#db2f2f */
 }
 
 .logo {
-	width:13%;
-	height: auto; 
+	width:70%;
+    margin-top: -8px;
 }
 
 .mynav {

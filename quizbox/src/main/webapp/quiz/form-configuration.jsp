@@ -147,8 +147,8 @@
 		<h1 class="quiz-title">{{titleQuiz}}</h1>
 		<div>
 			<div>
-				<div class="quiz-image" ng-show="!$flow.files.length">
-					<img alt="Brand"
+				<div ng-show="!$flow.files.length">
+					<img alt="Brand"  class="img-rounded img-responsive"
 						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
 				</div>
 				<div class="quiz-image" ng-show="$flow.files.length">
