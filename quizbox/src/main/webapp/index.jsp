@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 <head>
 <title>Quiz Box</title>
 	
@@ -19,9 +19,11 @@
 </head>
 <body ng-app="myApp">
 	
-	<div ng-include='"<c:url value='/template/header.jsp'/>"'></div>
-	<div ng-view></div>
-	<div ng-include='"<c:url value='/template/footer.jsp'/>"'></div>
+	<div ui-view='header' ng-controller='MainCtrl'></div>
+	
+	<div ui-view='content'></div>
+	
+	<div ui-view='footer'></div>
 
 	<script type="text/javascript" src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>" > </script>
 	<script type="text/javascript" src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/>" > </script>
@@ -35,6 +37,7 @@
 	<script type="text/javascript" src="<c:url value='/resources/colorpicker/bootstrap-colorpicker-module.min.js'/>" > </script>
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow-standalone.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/resources/js/angular-translate.min.js'/>"></script>
 	
 </body>
 </html>

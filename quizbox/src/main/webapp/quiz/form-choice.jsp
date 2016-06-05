@@ -8,11 +8,11 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div>
-				<a class="btn btn-default btn-lg" href="#/form">
+				<a class="btn btn-default btn-lg" ui-sref="index.form">
 					<span class="fa fa-list-alt fa-3x"></span> 
 				    Quiz D'évaluation
 				</a>
-				<a class="btn btn-default btn-lg" href="#/form">
+				<a class="btn btn-default btn-lg" href="">
 					<span class="fa fa-user fa-3x"></span> 
 				    Quiz De Profil
 				</a>
