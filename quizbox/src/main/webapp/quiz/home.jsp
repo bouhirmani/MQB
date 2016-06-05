@@ -5,27 +5,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container">
-	
-	<div class="row" ng-controller="animationCtrl">
+	<div class="row">
 		<div class="col-xs-4">
-			<a class="btn btn-danger btn-lg" ng-click="animation = !animation"
-						ng-class="{ active: animation }">
+			<a class="btn btn-danger btn-lg" href="#/choice">
 				<span class="fa fa-pencil-square-o"></span> <br/>Créer un nouveau Quiz
 			</a>
-		</div>
-		{{animation}}
-		<div class="col-xs-6">
-			<div ng-show="animation">
-				<a href="#/form" class="btn btn-warning btn-lg" ng-click="animation = !animation"
-						ng-class="{ active: animation }">
-				<span class="fa fa-user-secret"></span> <br/>Quiz D'évaluation
-				</a>
-				
-				<a href="#/form" class="btn btn-warning btn-lg" ng-click="animation = !animation"
-						ng-class="{ active: animation }">
-				<span class="fa fa-newspaper-o"></span> <br/>Quiz de Profil
-				</a>
-			</div>
 		</div>
 	</div>
 

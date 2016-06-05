@@ -8,11 +8,6 @@ App.controller('formController', ['$scope', '$http', function($scope, $http) {
 	    };
 }]);
 
-App.controller('animationCtrl', ['$scope', '$http', function($scope, $http) {
-	  
-	  $scope.animation = false;
-
-}]);
 
 App.controller('formDebutCtrl', ['$scope', '$http', function($scope, $http) {
 	
