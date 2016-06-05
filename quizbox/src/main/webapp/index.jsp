@@ -30,6 +30,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/app.js'/>" > </script>
 	<script type="text/javascript" src="<c:url value='/scripts/controllers.js'/>" > </script>
+	<script type="text/javascript" src="<c:url value='/resources/js/angular-ui-router.min.js'/>" > </script>
+	
 	<script type="text/javascript" src="<c:url value='/resources/colorpicker/bootstrap-colorpicker-module.min.js'/>" > </script>
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow-standalone.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow.min.js'/>"></script>
