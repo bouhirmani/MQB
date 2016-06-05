@@ -19,3 +19,27 @@ App.controller('formDebutCtrl', ['$scope', '$http', function($scope, $http) {
 	  $scope.descriptionQuiz = 'votre description du Quiz';
 
 }]);
+
+App.controller('logoCtrl', ['$scope', '$http', function($scope, $http) {
+	
+	  $scope.colorButtonCreatQuiz = '#337ab7';
+	  $scope.colorText = '#ffffff';
+	  $scope.textButtonCreatQuiz = 'Faire le Quiz';
+	  $scope.colorBackground = '#F5A345';
+	  $scope.titleQuiz = 'Nouveau Quiz';
+	  $scope.descriptionQuiz = 'votre description du Quiz';
+
+}]);
+
+App.controller('MainCtrl', ['$scope', '$http', '$translate', function ($scope, $http, $translate) {
+	  $scope.changeLanguage = function (key) {
+	
+	$translate.use(key);
+	
+	  };
+	 
+	  $scope.userData = {
+	    name: 'Xavier',
+	    age: 25
+	  }
+}]);

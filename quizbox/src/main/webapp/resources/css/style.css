@@ -180,10 +180,9 @@ panel.panel-default {
 	color: #db2f2f;
 }
 
-.color-preview {
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
+.color-picker {
+    width: 25px;
+    height: 25px;
     display: inline-block;
 }
 

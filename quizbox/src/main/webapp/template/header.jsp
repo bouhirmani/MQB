@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top" >
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -20,17 +20,21 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" >
-     
+      <button ng-click="changeLanguage('en')"><p translate="BUTTON_LANG_EN"></p></button>
+   
+    <button  ng-click="changeLanguage('fr')"><p translate="BUTTON_LANG_FR"></p></button>
+    
       <ul class="nav navbar-nav navbar-right">
         
+  
         <li class="dropdown">
-          <a class="dropdown-toggle fa fa-user " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">email@adress.com <span class="caret"></span></a>
+          <a class="dropdown-toggle fa fa-user " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  email@adress.com <span class="caret"></span></a>
           <ul class="dropdown-menu">
 						<li><a id="account" role="button"><i
-								class="fa fa-user fa-fw"></i> User Profile</a></li>
+								class="fa fa-user fa-fw"></i> <i translate=" USER_PROFILE"></i></a></li>
 						<li class="divider"></li>
 						<li><a id="logout" role="button"><i
-								class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+								class="fa fa-sign-out fa-fw"></i> <i translate=" LOGOUT"></i></a></li>
 					</ul>
         </li>
       </ul>

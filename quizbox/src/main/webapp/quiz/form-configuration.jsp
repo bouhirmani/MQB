@@ -7,7 +7,7 @@
 		<div id="customize-btns">
 			<div class="customize-btns">
 				<div id="customize-options">
-					<p class="item-heading">Titre du Quiz</p>
+					<p class="item-heading" translate="TITLE_QUIZ"></p>
 					<div class="item-options">
 						<input type="text" class="form-control" value="" width="20px"
 							placeholder="Titre du Quiz" ng-model="titleQuiz">
@@ -20,16 +20,16 @@
 						<textarea class="form-control" placeholder="Description du Quiz"
 							ng-model="descriptionQuiz"></textarea>
 					</div>
-					<div class="disabled-options">
-						<p class="item-heading">Custom Logo</p>
-						<div class="item-options">
-							<a role="button" class="edit-link cover-btn"><i
-								class="fa fa-circle fa-fw"></i> Edit</a> <a role="button"
-								class="edit-link remove-cover-btn"><i
-								class="fa fa-circle fa-fw"></i> Remove</a>
-						</div>
+					<!-- 					<div class="disabled-options"> -->
+					<!-- 						<p class="item-heading">Custom Logo</p> -->
+					<!-- 						<div class="item-options"> -->
+					<!-- 							<a role="button" class="edit-link cover-btn"><i -->
+					<!-- 								class="fa fa-circle fa-fw"></i> Edit</a> <a role="button" -->
+					<!-- 								class="edit-link remove-cover-btn"><i -->
+					<!-- 								class="fa fa-circle fa-fw"></i> Remove</a> -->
+					<!-- 						</div> -->
 
-					</div>
+					<!-- 					</div> -->
 					<p class="item-heading">Cover Photo</p>
 					<!-- 					<div class="item-options"> -->
 					<!-- 						<a role="button" class="edit-link cover-btn"><i -->
@@ -50,7 +50,7 @@
 
 					<div class="item-options">
 						<div>
-							<input type="text" class="form-control color-preview"
+							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorBackground}"
 								readonly="readonly"></input> <input colorpicker
 								ng-model="colorBackground" type="text">
@@ -60,7 +60,7 @@
 					<p class="item-heading">Font Color</p>
 					<div class="item-options">
 						<div>
-							<input type="text" class="form-control color-preview"
+							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorText}" readonly="readonly"></input>
 							<input colorpicker ng-model="colorText" type="text">
 
@@ -76,7 +76,7 @@
 					<p class="item-heading">Button Color</p>
 					<div class="item-options">
 						<div>
-							<input type="text" class="form-control color-preview"
+							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorButtonCreatQuiz}"
 								readonly="readonly"></input> <input colorpicker
 								ng-model="colorButtonCreatQuiz" type="text">
@@ -89,7 +89,24 @@
 							value="" placeholder="Button Text" ng-model="textButtonCreatQuiz">
 					</div>
 
+					<p class="item-heading">Custom Logo</p>
+					<div ng-controller="logoCtrl" flow-init="{singleFile:true}"
+						flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+						<div ng-show="!$flow.files.length">
+							<img alt="Brand" class="img-rounded img-responsive" width="100px" 
+								src="<c:url value='/resources/img/logo-placeholder.png'/>" />
+						</div>
+						<div class="img-rounded img-responsive"
+							ng-show="$flow.files.length">
+							<img flow-img="$flow.files[0]" width="100px" id="image" />
+						</div>
+						<span class="btn btn-primary" ng-show="!$flow.files.length"
+							flow-btn>Charger Logo</span> <span class="btn btn-info"
+							ng-show="$flow.files.length" flow-btn>Modifier Logo</span> <span
+							class="btn btn-danger" ng-show="$flow.files.length"
+							ng-click="$flow.cancel()">Supprimer Logo</span>
 
+					</div>
 
 
 				</div>
@@ -148,10 +165,10 @@
 		<div>
 			<div>
 				<div ng-show="!$flow.files.length">
-					<img alt="Brand"  class="img-rounded img-responsive"
+					<img alt="Brand" class="img-rounded img-responsive"
 						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
 				</div>
-				<div class="quiz-image" ng-show="$flow.files.length">
+				<div class="img-rounded img-responsive" ng-show="$flow.files.length">
 					<img flow-img="$flow.files[0]" width="500px" id="image" />
 				</div>
 			</div>
@@ -161,6 +178,8 @@
 			<button type="button" class="btn btn-lg"
 				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}">{{textButtonCreatQuiz}}</button>
 		</div>
+
 	</div>
+
 
 </div>
