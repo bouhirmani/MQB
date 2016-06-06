@@ -10,14 +10,14 @@
 					<p class="item-heading" translate="TITLE_QUIZ"></p>
 					<div class="item-options">
 						<input type="text" class="form-control" value="" width="20px"
-							placeholder="Titre du Quiz" ng-model="titleQuiz">
+							ng-model="titleQuiz">
 					</div>
 
-					<p class="item-heading">Description du Quiz</p>
+					<p class="item-heading" translate="DESCRIPTION_QUIZ"></p>
 					<div class="item-options">
 						<!-- 							<input type="text" class="form-control" value="" -->
 						<!-- 								placeholder="Description du Quiz" ng-model="descriptionQuiz"> -->
-						<textarea class="form-control" placeholder="Description du Quiz"
+						<textarea class="form-control"
 							ng-model="descriptionQuiz"></textarea>
 					</div>
 					<!-- 					<div class="disabled-options"> -->
@@ -30,7 +30,7 @@
 					<!-- 						</div> -->
 
 					<!-- 					</div> -->
-					<p class="item-heading">Cover Photo</p>
+					<p class="item-heading" translate="COVER_PHOTO"></p>
 					<!-- 					<div class="item-options"> -->
 					<!-- 						<a role="button" class="edit-link cover-btn"><i -->
 					<!-- 							class="fa fa-circle fa-fw"></i> Edit</a> <a role="button" -->
@@ -40,13 +40,13 @@
 
 					<div>
 						<span class="btn btn-primary" ng-show="!$flow.files.length"
-							flow-btn>Charger Photo</span> <span class="btn btn-info"
-							ng-show="$flow.files.length" flow-btn>Modifier Photo</span> <span
+							flow-btn><p translate="UPLOAD_PHOTO"></p></span> <span class="btn btn-info"
+							ng-show="$flow.files.length" flow-btn><p translate="CHANGE_PHOTO"></p></span> <span
 							class="btn btn-danger" ng-show="$flow.files.length"
-							ng-click="$flow.cancel()">Supprimer Photo</span>
+							ng-click="$flow.cancel()"><p translate="DELETE_PHOTO"></p></span>
 					</div>
 
-					<p class="item-heading">Background Color</p>
+					<p class="item-heading" translate="BGR_COLOR"></p>
 
 					<div class="item-options">
 						<div>
@@ -57,7 +57,7 @@
 						</div>
 					</div>
 
-					<p class="item-heading">Font Color</p>
+					<p class="item-heading" translate="FONT_COLOR"></p>
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-picker"
@@ -66,14 +66,14 @@
 
 						</div>
 					</div>
-					<p class="item-heading">Font Type</p>
+					<p class="item-heading" translate="FONT_TYPE"></p>
 					<div class="item-options">
-						<p id="font-type" style="margin: 0">Oswald</p>
-						<a role="button" id="font-type-btn" class="edit-link"><i
-							class="fa fa-circle fa-fw"></i> Edit</a>
+
+						<button type="button" class="btn btn-primary"
+							data-toggle="modal" data-target="#fontModal"><p translate="CHANGE"></p></button>
 					</div>
 
-					<p class="item-heading">Button Color</p>
+					<p class="item-heading" translate="BUTTON_COLOR"></p>
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-picker"
@@ -83,17 +83,17 @@
 						</div>
 					</div>
 
-					<p class="item-heading">Button Text</p>
+					<p class="item-heading" translate="BUTTON_TEXT"></p>
 					<div class="item-options">
 						<input type="text" id="btn-text-input" class="form-control"
-							value="" placeholder="Button Text" ng-model="textButtonCreatQuiz">
+							value="" ng-model="textButtonCreatQuiz">
 					</div>
 
-					<p class="item-heading">Custom Logo</p>
+					<p class="item-heading" translate="CUSTOM_LOGO"></p>
 					<div ng-controller="logoCtrl" flow-init="{singleFile:true}"
 						flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
 						<div ng-show="!$flow.files.length">
-							<img alt="Brand" class="img-rounded img-responsive" width="100px" 
+							<img alt="Brand" class="img-rounded img-responsive" width="100px"
 								src="<c:url value='/resources/img/logo-placeholder.png'/>" />
 						</div>
 						<div class="img-rounded img-responsive"
@@ -101,54 +101,43 @@
 							<img flow-img="$flow.files[0]" width="100px" id="image" />
 						</div>
 						<span class="btn btn-primary" ng-show="!$flow.files.length"
-							flow-btn>Charger Logo</span> <span class="btn btn-info"
-							ng-show="$flow.files.length" flow-btn>Modifier Logo</span> <span
+							flow-btn><p translate="UPLOAD_LOGO"></p></span> <span class="btn btn-info"
+							ng-show="$flow.files.length" flow-btn><p translate="CHANGE_LOGO"></p></span> <span
 							class="btn btn-danger" ng-show="$flow.files.length"
-							ng-click="$flow.cancel()">Supprimer Logo</span>
+							ng-click="$flow.cancel()"><p translate="DELETE_LOGO"></p></span>
 
 					</div>
 
 
 				</div>
 
-				<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog"
-					aria-labelledby="edit-modal-label" aria-hidden="true"
-					style="display: none;">
+				<div class="modal fade" id="fontModal" tabindex="-1" role="dialog"
+					aria-labelledby="edit-modal-label">
 					<div id="edit-modal-dialog" class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
-								<h4 class="modal-title text-center">Edit Font Type</h4>
+								<h4 class="modal-title text-center"><p translate="EDIT_FONT"></h4>
 							</div>
 							<div class="modal-body">
-								<div class="font-types-container">
-									<ul class="font-types">
-										<li class="font-type" style="background-position: 0px 0px"
-											data-option="0" data-name="Proxima Nova"><span
-											class="selector"></span></li>
-										<li class="font-type" style="background-position: 0px -33px"
-											data-option="1" data-name="Ubuntu"><span
-											class="selector"></span></li>
-										<li class="font-type" style="background-position: 0px -66px"
-											data-option="2" data-name="Montserrat"><span
-											class="selector"></span></li>
-										<li class="font-type selected"
-											style="background-position: 0px -99px" data-option="3"
-											data-name="Oswald"><span class="selector"></span></li>
-										<li class="font-type" style="background-position: 0px -132px"
-											data-option="4" data-name="Helvetica"><span
-											class="selector"></span></li>
-										<li class="font-type" style="background-position: 0px -165px"
-											data-option="5" data-name="Lora"><span class="selector"></span></li>
-									</ul>
-								</div>
+							
+										<input type="radio" class="selector"><span style="font-family: sans-serif">sans-serif : Voici un exemple</span></br>
+										<input type="radio" class="selector"><span class="selector" style="font-family: Arial">Arial : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Tahoma">Tahoma : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Trebuchet MS">Trebuchet MS : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Verdana">Verdana : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: serif">serif : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Times">Times : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Georgia">Georgia : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: monospace">monospace : Voici un exemple</span></br>
+										<input type="radio" ><span class="selector" style="font-family: Courier">Courier : Voici un exemple</span></br>
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
-									data-dismiss="modal" aria-hidden="true">Close</button>
-								<button type="button" id="edit-font-type" class="btn blue-btn">Change
-									Font Type</button>
+									data-dismiss="modal"><p translate="CLOSE"></button>
+								<button type="button" id="edit-font-type" class="btn blue-btn"><p translate="EDIT_FONT"></button>
 							</div>
 						</div>
 					</div>
@@ -165,10 +154,10 @@
 		<div>
 			<div>
 				<div ng-show="!$flow.files.length">
-					<img alt="Brand" class="img-rounded img-responsive"
+					<img alt="Brand" class="img-rounded img-responsive quiz-image"
 						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
 				</div>
-				<div class="img-rounded img-responsive" ng-show="$flow.files.length">
+				<div class="img-rounded img-responsive quiz-image" ng-show="$flow.files.length">
 					<img flow-img="$flow.files[0]" width="500px" id="image" />
 				</div>
 			</div>
@@ -180,6 +169,8 @@
 		</div>
 
 	</div>
+
+
 
 
 </div>

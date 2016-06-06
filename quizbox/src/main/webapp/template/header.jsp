@@ -20,9 +20,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" >
-      <button ng-click="changeLanguage('en')"><p translate="BUTTON_LANG_EN"></p></button>
+
+      <button type="button" class="btn btn-link" ng-click="changeLanguage('en')"><i translate="BUTTON_LANG_EN"></i></button>
    
-    <button  ng-click="changeLanguage('fr')"><p translate="BUTTON_LANG_FR"></p></button>
+    <button type="button" class="btn btn-link" ng-click="changeLanguage('fr')"><i translate="BUTTON_LANG_FR"></i></button>
     
       <ul class="nav navbar-nav navbar-right">
         
