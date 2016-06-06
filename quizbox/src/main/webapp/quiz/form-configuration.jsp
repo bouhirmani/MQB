@@ -68,9 +68,22 @@
 					</div>
 					<p class="item-heading" translate="FONT_TYPE"></p>
 					<div class="item-options">
-
-						<button type="button" class="btn btn-primary"
-							data-toggle="modal" data-target="#fontModal"><p translate="CHANGE"></p></button>
+						<select ng-model="fontType">
+						     <option style="font-family: 'Comic Sans MS'" value="Comic Sans MS">Comic Sans MS</option>
+						     <option style="font-family: Arial" value="Arial">Arial</option>
+						     <option style="font-family: 'Times New Roman'" value="Times New Roman">Times New Roman</option>
+						     <option style="font-family: 'sans-serif'" value="sans-serif">sans-serif</option>
+						     <option style="font-family: 'Tahoma'" value="Tahoma">Tahoma</option>
+						     <option style="font-family: 'Trebuchet MS'" value="Trebuchet MS">Trebuchet MS</option>
+						     <option style="font-family: 'Verdana'" value="Verdana">Verdana</option>
+						     <option style="font-family: 'serif'" value="serif">serif</option>
+						     <option style="font-family: 'Times'" value="Times">Times</option>
+						     <option style="font-family: 'Georgia'" value="Georgia">Georgia</option>
+						     <option style="font-family: 'monospace'" value="monospace">monospace</option>
+						     <option style="font-family: 'Courier'" value="Courier">Courier</option>
+					  	</select>
+<!-- 						<button type="button" class="btn btn-primary" -->
+<!-- 							data-toggle="modal" data-target="#fontModal"><p translate="CHANGE"></p></button> -->
 					</div>
 
 					<p class="item-heading" translate="BUTTON_COLOR"></p>
@@ -148,7 +161,7 @@
 
 
 	<div
-		ng-style="{'color': colorText, 'background-color': colorBackground}"
+		ng-style="{'color': colorText, 'background-color': colorBackground, 'font-family' : fontType}"
 		class="col-md-8 start-container">
 		<h1 class="quiz-title">{{titleQuiz}}</h1>
 		<div>
