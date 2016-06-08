@@ -1,13 +1,6 @@
 var App = angular.module('myApp', [ 'ngAnimate',
                                     'colorpicker.module', 'flow', 'ui.router','pascalprecht.translate']);
 
-//App.config(['$routeProvider', function ($routeProvider) {
-//$routeProvider
-//.when("/", {templateUrl: "quiz/home.jsp", controller: "animationCtrl"})
-//.when("/form", {templateUrl: "quiz/form.jsp", controller: "formDebutCtrl"})
-//.when("/choice", {templateUrl: "quiz/form-choice.jsp", controller: ""})
-//.otherwise("/404", {templateUrl: "template/404.html", controller: ""});
-//}]);
 
 App.config(function($stateProvider, $urlRouterProvider) {
 
@@ -51,7 +44,7 @@ App.config(function($stateProvider, $urlRouterProvider) {
 	.state('index.form.contenu', {
 		url : '/contenu',
 		templateUrl : 'quiz/form-contenu.jsp',
-		controller : ''
+		controller : 'ContenuCtrl'
 	})
 });
 

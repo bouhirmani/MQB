@@ -33,14 +33,34 @@ App.controller('logoCtrl', ['$scope', '$http', function($scope, $http) {
 }]);
 
 App.controller('MainCtrl', ['$scope', '$http', '$translate', function ($scope, $http, $translate) {
-	  $scope.changeLanguage = function (key) {
-	
-	$translate.use(key);
-	
-	  };
+	$scope.changeLanguage = function (key) {
+		$translate.use(key);
+	};
 	 
-	  $scope.userData = {
-	    name: 'Xavier',
+	$scope.userData = {
+    	name: 'Xavier',
 	    age: 25
 	  }
 }]);
+
+App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
+
+	$scope.results=[{id:'',image:'',title:'',description:''}];
+	  
+	  $scope.addNewResult = function() {
+	    var newResult = $scope.results.length+1;
+	    $scope.results.push({id:'',image:'',title:'',description:''});
+	  };
+	    
+	  $scope.removeResult = function() {
+	    var lastResult = $scope.results.length-1;
+	    $scope.results.splice(lastResult);
+	  };
+	  
+	
+	
+	
+}]);
+
+
+

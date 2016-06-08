@@ -7,13 +7,13 @@
 		<div id="customize-btns">
 			<div class="customize-btns">
 				<div id="customize-options">
-					<p class="item-heading" translate="TITLE_QUIZ"></p>
+					<span class="item-heading" translate="TITLE_QUIZ"></span>
 					<div class="item-options">
 						<input type="text" class="form-control" value="" width="20px"
 							ng-model="titleQuiz">
 					</div>
 
-					<p class="item-heading" translate="DESCRIPTION_QUIZ"></p>
+					<span class="item-heading" translate="DESCRIPTION_QUIZ"></span>
 					<div class="item-options">
 						<!-- 							<input type="text" class="form-control" value="" -->
 						<!-- 								placeholder="Description du Quiz" ng-model="descriptionQuiz"> -->
@@ -21,7 +21,7 @@
 							ng-model="descriptionQuiz"></textarea>
 					</div>
 					<!-- 					<div class="disabled-options"> -->
-					<!-- 						<p class="item-heading">Custom Logo</p> -->
+					<!-- 						<span class="item-heading">Custom Logo</span> -->
 					<!-- 						<div class="item-options"> -->
 					<!-- 							<a role="button" class="edit-link cover-btn"><i -->
 					<!-- 								class="fa fa-circle fa-fw"></i> Edit</a> <a role="button" -->
@@ -30,7 +30,7 @@
 					<!-- 						</div> -->
 
 					<!-- 					</div> -->
-					<p class="item-heading" translate="COVER_PHOTO"></p>
+					<span class="item-heading" translate="COVER_PHOTO"></span>
 					<!-- 					<div class="item-options"> -->
 					<!-- 						<a role="button" class="edit-link cover-btn"><i -->
 					<!-- 							class="fa fa-circle fa-fw"></i> Edit</a> <a role="button" -->
@@ -39,14 +39,19 @@
 					<!-- 					</div> -->
 
 					<div>
-						<span class="btn btn-primary" ng-show="!$flow.files.length"
-							flow-btn><p translate="UPLOAD_PHOTO"></p></span> <span class="btn btn-info"
-							ng-show="$flow.files.length" flow-btn><p translate="CHANGE_PHOTO"></p></span> <span
-							class="btn btn-danger" ng-show="$flow.files.length"
-							ng-click="$flow.cancel()"><p translate="DELETE_PHOTO"></p></span>
+						<span class="btn btn-sm btn-primary" ng-show="!$flow.files.length" flow-btn>
+							<span translate="UPLOAD_PHOTO"></span>
+						</span> 
+						<span class="btn btn-sm btn-info" ng-show="$flow.files.length" flow-btn>
+							<span translate="CHANGE_PHOTO"></span>
+						</span> 
+						<span
+							class="btn btn-sm btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+							<span translate="DELETE_PHOTO"></span>
+						</span>
 					</div>
 
-					<p class="item-heading" translate="BGR_COLOR"></p>
+					<span class="item-heading" translate="BGR_COLOR"></span>
 
 					<div class="item-options">
 						<div>
@@ -57,7 +62,7 @@
 						</div>
 					</div>
 
-					<p class="item-heading" translate="FONT_COLOR"></p>
+					<span class="item-heading" translate="FONT_COLOR"></span>
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-picker"
@@ -66,7 +71,7 @@
 
 						</div>
 					</div>
-					<p class="item-heading" translate="FONT_TYPE"></p>
+					<span class="item-heading" translate="FONT_TYPE"></span>
 					<div class="item-options">
 						<select ng-model="fontType">
 						     <option style="font-family: 'Comic Sans MS'" value="Comic Sans MS">Comic Sans MS</option>
@@ -83,10 +88,10 @@
 						     <option style="font-family: 'Courier'" value="Courier">Courier</option>
 					  	</select>
 <!-- 						<button type="button" class="btn btn-primary" -->
-<!-- 							data-toggle="modal" data-target="#fontModal"><p translate="CHANGE"></p></button> -->
+<!-- 							data-toggle="modal" data-target="#fontModal"><span translate="CHANGE"></span></button> -->
 					</div>
 
-					<p class="item-heading" translate="BUTTON_COLOR"></p>
+					<span class="item-heading" translate="BUTTON_COLOR"></span>
 					<div class="item-options">
 						<div>
 							<input type="text" class="form-control color-picker"
@@ -96,13 +101,13 @@
 						</div>
 					</div>
 
-					<p class="item-heading" translate="BUTTON_TEXT"></p>
+					<span class="item-heading" translate="BUTTON_TEXT"></span>
 					<div class="item-options">
 						<input type="text" id="btn-text-input" class="form-control"
 							value="" ng-model="textButtonCreatQuiz">
 					</div>
 
-					<p class="item-heading" translate="CUSTOM_LOGO"></p>
+					<span class="item-heading" translate="CUSTOM_LOGO"></span>
 					<div ng-controller="logoCtrl" flow-init="{singleFile:true}"
 						flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
 						<div ng-show="!$flow.files.length">
@@ -113,11 +118,11 @@
 							ng-show="$flow.files.length">
 							<img flow-img="$flow.files[0]" width="100px" id="image" />
 						</div>
-						<span class="btn btn-primary" ng-show="!$flow.files.length"
-							flow-btn><p translate="UPLOAD_LOGO"></p></span> <span class="btn btn-info"
-							ng-show="$flow.files.length" flow-btn><p translate="CHANGE_LOGO"></p></span> <span
-							class="btn btn-danger" ng-show="$flow.files.length"
-							ng-click="$flow.cancel()"><p translate="DELETE_LOGO"></p></span>
+						<span class="btn btn-sm btn-primary" ng-show="!$flow.files.length"
+							flow-btn><span translate="UPLOAD_LOGO"></span></span> <span class="btn btn-sm btn-info"
+							ng-show="$flow.files.length" flow-btn><span translate="CHANGE_LOGO"></span></span> <span
+							class="btn btn-sm btn-danger" ng-show="$flow.files.length"
+							ng-click="$flow.cancel()"><span translate="DELETE_LOGO"></span></span>
 
 					</div>
 
@@ -131,7 +136,9 @@
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
-								<h4 class="modal-title text-center"><p translate="EDIT_FONT"></h4>
+								<h4 class="modal-title text-center">
+									<span translate="EDIT_FONT"></span>
+								</h4>
 							</div>
 							<div class="modal-body">
 							
@@ -148,9 +155,12 @@
 								
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal"><p translate="CLOSE"></button>
-								<button type="button" id="edit-font-type" class="btn blue-btn"><p translate="EDIT_FONT"></button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">
+									<span translate="CLOSE"></span>
+								</button>
+								<button type="button" id="edit-font-type" class="btn blue-btn">
+									<span translate="EDIT_FONT"></span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -171,7 +181,7 @@
 						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
 				</div>
 				<div class="img-rounded img-responsive quiz-image" ng-show="$flow.files.length">
-					<img flow-img="$flow.files[0]" width="500px" id="image" />
+					<img flow-img="$flow.files[0]" width="400px" id="image" />
 				</div>
 			</div>
 		</div>

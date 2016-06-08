@@ -238,4 +238,37 @@ panel.panel-default {
     font-family: inherit;
     text-align: center;
 }
+/************btn-round***************/
+.btn-round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.btn-round.btn-lg {
+    width: 48px;
+    height: 48px;
+}
 
+.btn-round.btn-sm {
+    width: 34px;
+    height: 34px;
+}
+.btn-round.btn-xs {
+    width: 24px;
+    height: 24px;
+}
+/**************btn-round**************/
+/*************Remove style***********/
+.remove{
+    background: #C76868;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 24px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 9px;
+    vertical-align: top;
+    line-height: 100%;   
+}
+/***********************************/

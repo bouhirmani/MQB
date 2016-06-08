@@ -6,9 +6,9 @@
 	<!-- START JUSTIFIED TABS -->
 	    <div class="panel panel-default tabs">
 	        <ul class="nav nav-tabs nav-justified">
-	            <li class="active"><a data-toggle="tab" ui-sref=".configuration">Configuration</a></li>
-	            <li><a data-toggle="tab" ui-sref=".contenu">Contenu</a></li>
-	            <li><a data-toggle="tab" ui-sref=".publication">Publication</a></li>
+	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".configuration">Configuration</a></li>
+	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".contenu">Contenu</a></li>
+	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".publication">Publication</a></li>
 	        </ul>
 	        <div class="panel-body tab-content">
 	            <div class="tab-pane active" id="tab8">
