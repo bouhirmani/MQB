@@ -203,9 +203,7 @@ panel.panel-default {
 .start-app {
     
     border-radius: 5px;
-    
     padding: 10px 15px;
-   
     margin-top: 15px;
     display: inline-block;
     text-align: center;
@@ -224,13 +222,11 @@ panel.panel-default {
 }
 
 .quiz-subtitle {
-    font-weight: 300;
-    font-size: 18px;
+    font-size: small;
     padding: 0;
     margin: 15px 0 0 0;
     padding: 0 20px;
-    color: inherit;
-    font-family: inherit;
+
     text-align: center;
 }
 /************btn-round***************/
@@ -272,3 +268,4 @@ panel.panel-default {
 	background-color: #262626;
 	color: white;
 }
+

@@ -96,7 +96,7 @@
 			</div>
 		</div>
 		<div class=" col-md-12 text-center ">
-			<label class="quiz-subtitle"><h2>{{descriptionQuiz}}</h2></label>
+			<label class="quiz-subtitle">{{descriptionQuiz}}</label>
 			
 		</div>
 	
