@@ -178,6 +178,10 @@ panel.panel-default {
 
 .item-heading {
 	color: #db2f2f;
+	
+}
+.item-margin{
+	margin-bottom: 10px;
 }
 
 .color-picker {
@@ -188,31 +192,22 @@ panel.panel-default {
 
 .quiz-image {
     position: relative;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    border-radius: 5px;
     background-position: center;
     vertical-align: middle;
     margin: auto;
     text-align: center;
+    height: 300px;
     
 }
          
 .start-app {
-    color: #fff;
-    width: 70%;
+    
     border-radius: 5px;
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
+    
     padding: 10px 15px;
-    text-decoration: none;
+   
     margin-top: 15px;
     display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
     text-align: center;
     background-position: center;
     
@@ -272,3 +267,8 @@ panel.panel-default {
     line-height: 100%;   
 }
 /***********************************/
+
+.button{
+	background-color: #262626;
+	color: white;
+}
