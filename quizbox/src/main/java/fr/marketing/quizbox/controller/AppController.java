@@ -29,6 +29,10 @@ public class AppController {
 	public String formConfigurationPage(ModelMap model) {
 		return "configuration";
 	}
+	@RequestMapping(value = { "/form/contenu"}, method = RequestMethod.GET)
+	public String formContenuPage(ModelMap model) {
+		return "contenu";
+	}
 	
 	 
 }

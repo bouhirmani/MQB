@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="<c:url value='/resources/colorpicker/colorpicker.css'/>" />
 
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="MainCtrl">
 	
 		<header id="header">
 			<tiles:insertAttribute name="header" />

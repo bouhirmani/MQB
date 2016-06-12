@@ -7,7 +7,7 @@
 	    <div class="panel panel-default tabs">
 	        <ul class="nav nav-tabs nav-justified">
 	            <li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
-	            <li><a href="${pageContext.request.contextPath}/form">Contenu</a></li>
+	            <li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>
 	            <li><a href="${pageContext.request.contextPath}/form">Publication</a></li>
 	        </ul>
 	        <div class="panel-body tab-content">
