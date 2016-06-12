@@ -6,13 +6,13 @@
 	<!-- START JUSTIFIED TABS -->
 	    <div class="panel panel-default tabs">
 	        <ul class="nav nav-tabs nav-justified">
-	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".configuration">Configuration</a></li>
-	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".contenu">Contenu</a></li>
-	            <li ui-sref-active="active"><a data-toggle="tab" ui-sref=".publication">Publication</a></li>
+	            <li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+	            <li><a href="${pageContext.request.contextPath}/form">Contenu</a></li>
+	            <li><a href="${pageContext.request.contextPath}/form">Publication</a></li>
 	        </ul>
 	        <div class="panel-body tab-content">
 	            <div class="tab-pane active" id="tab8">
-	                <div ui-view></div>
+	                <div></div>
 	            </div>
 	        </div>
 	    </div>                                         

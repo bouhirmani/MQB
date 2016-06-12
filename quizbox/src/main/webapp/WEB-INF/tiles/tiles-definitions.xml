@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+
+<tiles-definitions>  
+ 
+   <!-- Base Definition -->
+   <definition name="base-definition" 
+       template="/WEB-INF/template/template.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/template/header.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/template/footer.jsp" />  
+   </definition>  
+ 
+   <!-- Home Page -->
+   <definition name="home" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/quiz/home.jsp" />  
+   </definition>  
+   
+  <!-- Choice Page -->
+   <definition name="choice" extends="base-definition">  
+       <put-attribute name="title" value="Choice" />  
+       <put-attribute name="body" value="/WEB-INF/views/quiz/form-choice.jsp" />  
+   </definition>  
+ 
+   <!-- Form Page -->
+   <definition name="form" extends="base-definition" >  
+       <put-attribute name="title" value="Form" />  
+       <put-attribute name="body" value="/WEB-INF/views/quiz/form.jsp" />  
+   </definition>  
+      
+   <!-- Form Configuration Page -->
+   <definition name="configuration" extends="base-definition">  
+       <put-attribute name="title" value="Configuration" />  
+       <put-attribute name="body" value="/WEB-INF/views/quiz/form-configuration.jsp" />  
+   </definition>  
+      
+ 
+</tiles-definitions>

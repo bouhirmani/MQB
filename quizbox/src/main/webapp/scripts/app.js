@@ -1,52 +1,5 @@
 var App = angular.module('myApp', [ 'ngAnimate',
-                                    'colorpicker.module', 'flow', 'ui.router','pascalprecht.translate']);
-
-
-App.config(function($stateProvider, $urlRouterProvider) {
-
-	// For any unmatched url, send to /route1
-	$urlRouterProvider.otherwise('/')
-
-	$stateProvider
-	.state('index', {
-		views:{
-			'header': {
-				templateUrl:'template/header.jsp',
-			},
-			'content': {
-				template:'<div ui-view></div>'
-			},
-			'footer': {
-				templateUrl:'template/footer.jsp'
-			}
-		}
-	})
-	.state('index.home', {
-		url : '/',
-		templateUrl : 'quiz/home.jsp',
-		controller : ''
-	})
-	.state('index.choice', {
-		url : '/choice',
-		templateUrl : 'quiz/form-choice.jsp',
-		controller : ''
-	})
-	.state('index.form', {
-		url : '/form',
-		templateUrl : 'quiz/form.jsp',
-		controller : ''
-	})
-	.state('index.form.configuration', {
-		url : '/configuration',
-		templateUrl : 'quiz/form-configuration.jsp',
-		controller : 'formDebutCtrl'
-	})
-	.state('index.form.contenu', {
-		url : '/contenu',
-		templateUrl : 'quiz/form-contenu.jsp',
-		controller : 'ContenuCtrl'
-	})
-});
+                                    'colorpicker.module', 'flow','pascalprecht.translate']);
 
 App.config(function ($translateProvider) {
 	$translateProvider.translations('en', {

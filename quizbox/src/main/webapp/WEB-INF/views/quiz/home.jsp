@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-4">
-			<a class="btn btn-danger btn-lg" ui-sref="index.choice">
+			<a class="btn btn-danger btn-lg" href="${pageContext.request.contextPath}/choice">
 				<span class="fa fa-pencil-square-o"></span> <br/>Créer un nouveau Quiz
 			</a>
 		</div>
