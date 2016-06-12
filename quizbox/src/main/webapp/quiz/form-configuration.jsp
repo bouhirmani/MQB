@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<form:form method="POST" modelAttribute="quiz">
 <div id="edit-container" ng-controller="formDebutCtrl"
 	flow-init="{singleFile:true}"
 	flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
@@ -101,8 +103,8 @@
 		</div>
 	
 		<div class="col-md-12 text-center ">
-		 	<button type="button" class="btn btn-lg"
-				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}">{{textButtonCreatQuiz}}</button>
+		 	<input type="submit" class="btn btn-lg" value="{{textButtonCreatQuiz}}"
+				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}"></input>
 		</div>
 	
 
@@ -149,7 +151,7 @@
 					</div>
 
 					<span class="item-heading" translate="CUSTOM_LOGO"></span>
-					<div ng-controller="logoCtrl" flow-init="{singleFile:true}"
+					<div flow-init="{singleFile:true}"
 						flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
 						<div ng-show="!$flow.files.length">
 							<img alt="Brand" class="img-rounded img-responsive" width="100px"
@@ -165,8 +167,7 @@
 								
 						</span> 
 						<span class="btn btn-sm btn-info btn-round"
-							ng-show="
-							$flow.files.length" flow-btn>
+							ng-show="$flow.files.length" flow-btn>
 <!-- 							<span translate="CHANGE_LOGO"></span> -->
 							<span class="fa fa-pencil-square-o"></span>
 							</span> 
@@ -226,3 +227,4 @@
 
 
 </div>
+</form:form>
