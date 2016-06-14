@@ -36,11 +36,13 @@
        <put-attribute name="body" value="/WEB-INF/views/quiz/form-configuration.jsp" />  
    </definition>  
 
-   <!-- Form Configuration Page -->
+   <!-- Form Contenu Page -->
    <definition name="contenu" extends="base-definition">  
        <put-attribute name="title" value="Contenu" />  
        <put-attribute name="body" value="/WEB-INF/views/quiz/form-contenu.jsp" />  
    </definition>  
+   
+      
       
  
 </tiles-definitions>

@@ -16,6 +16,8 @@
 
 <link rel="stylesheet" href="<c:url value='/resources/colorpicker/colorpicker.css'/>" />
 
+<link rel="stylesheet" href="<c:url value='/resources/css/configuration.css'/>" />
+
 </head>
 <body ng-app="myApp" ng-controller="MainCtrl">
 	

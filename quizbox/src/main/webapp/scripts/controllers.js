@@ -45,18 +45,70 @@ App.controller('MainCtrl', ['$scope', '$http', '$translate', function ($scope, $
 
 App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
 
-	$scope.results=[{id:'',image:'',title:'',description:''}];
+	//******Results*******
+	$scope.results=[{id:'1' ,image:'',title:'',description:''}];
 	  
-	  $scope.addNewResult = function() {
-	    var newResult = $scope.results.length+1;
-	    $scope.results.push({id:'',image:'',title:'',description:''});
-	  };
+	$scope.addNewResult = function() {
+	  var newResult = $scope.results.length+1;
+	  $scope.results.push({id:newResult ,image:'',title:'',description:''});
+	};
 	    
-	  $scope.removeResult = function() {
-	    var lastResult = $scope.results.length-1;
-	    $scope.results.splice(lastResult);
-	  };
+	$scope.removeResult = function(index) {
+	  var lastResult = $scope.results.length-1;
+	  $scope.results.splice(index,1);
+	};
 	  
+	//******Questions*******
+	$scope.questions=[{id:'1' ,title:'',image:false, imagePath:'',
+		answers:[{id:'1',title:"",image:"",resultCorrelations:""},
+		        {id:'2',title:"",image:"",resultCorrelations:""}]
+	}];
+	  
+	$scope.addNewQuestion = function() {
+	  var newQuestion = $scope.questions.length+1;
+	  $scope.questions.push({id:'1' ,title:'',image:false,imagePath:'',
+			answers:[{id:'1',title:"",image:false,resultCorrelations:""},
+				     {id:'2',title:"",image:false,resultCorrelations:""}]
+			});
+	};
+	    
+	$scope.removeQuestion = function(index) {
+	  var lastQuestion = $scope.questions.length-1;
+	  $scope.questions.splice(index,1);
+	};
+	
+
+	$scope.addImage=function(index){
+		$scope.questions[index].image=true;
+	};
+	
+	$scope.removeImage=function(index){
+		$scope.questions[index].image=false;
+	};
+	
+
+	$scope.addAnswerImage = function(parentIndex){
+		for (var i=0; i<$scope.questions[parentIndex].answers.length; i++) {
+			  $scope.questions[parentIndex].answers[i].image=true;
+		}
+	};
+	$scope.removeAnswerImage = function(parentIndex){
+		for (var i=0; i<$scope.questions[parentIndex].answers.length; i++) {
+			$scope.questions[parentIndex].answers[i].image=false;
+		}
+	};
+	
+	$scope.addAnswer = function(index) {
+		console.log(index);
+	  var newAnswer = $scope.questions[index].answers.length+1;
+	  $scope.questions[index].answers.push({id:newAnswer ,image:'',title:''});
+	};
+	    
+	$scope.removeAnswer = function(index) {
+	  var lastAnswer = $scope.questions[index].answers.length-1;
+	  $scope.questions[index].answers.splice(lastAnswer);
+	};
+		
 	
 	
 	
