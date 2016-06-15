@@ -21,8 +21,9 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+
 	protected Session getSession(){
-		return sessionFactory.getCurrentSession();
+		return getSessionFactory().getCurrentSession();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -41,5 +42,16 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	protected Criteria createEntityCriteria(){
 		return getSession().createCriteria(persistentClass);
 	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	
 
 }

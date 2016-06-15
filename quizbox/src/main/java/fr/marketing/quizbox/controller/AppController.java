@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import fr.marketing.quizbox.model.Quiz;
+
 @Controller
 @RequestMapping("/")
 public class AppController {
@@ -27,6 +29,8 @@ public class AppController {
 	
 	@RequestMapping(value = { "/form/configuration"}, method = RequestMethod.GET)
 	public String formConfigurationPage(ModelMap model) {
+		Quiz quiz = new Quiz();
+        model.addAttribute("quiz", quiz);
 		return "configuration";
 	}
 	@RequestMapping(value = { "/form/contenu"}, method = RequestMethod.GET)

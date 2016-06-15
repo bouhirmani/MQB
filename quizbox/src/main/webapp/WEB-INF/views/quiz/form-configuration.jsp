@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <form:form method="POST" modelAttribute="quiz">
 <div id="edit-container" ng-controller="formDebutCtrl"
@@ -11,8 +11,8 @@
 				<div id="customize-options">
 					<span class="item-heading" translate="TITLE_QUIZ"></span>
 					<div class="item-options item-margin">
-						<input type="text" class="form-control" value="" width="20px"
-							ng-model="titleQuiz">
+						<form:input  path="title" id="title" type="text" class="form-control" value="" width="20px"
+							ng-model="titleQuiz"/>
 					</div>
 
 					
@@ -33,8 +33,9 @@
 						<div>
 							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorButtonCreatQuiz}"
-								readonly="readonly"></input> <input colorpicker
-								ng-model="colorButtonCreatQuiz" type="text">
+								readonly="readonly"></input> 
+								<input colorpicker path="buttonColor" id="buttonColor"
+								ng-model="colorButtonCreatQuiz" type="text"></input>
 						</div>
 					</div>
 					<span class="item-heading" translate="BGR_COLOR"></span>
@@ -43,8 +44,9 @@
 						<div>
 							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorBackground}"
-								readonly="readonly"></input> <input colorpicker
-								ng-model="colorBackground" type="text">
+								readonly="readonly"></input> 
+								<input colorpicker  path="bgrColor" id="bgrColor"
+								ng-model="colorBackground" type="text"></input>
 						</div>
 					</div>
 
@@ -53,7 +55,7 @@
 						<div >
 							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorText}" readonly="readonly"></input>
-							<input colorpicker ng-model="colorText" type="text">
+							<input  path="fontColor" id="fontColor" colorpicker ng-model="colorText" type="text"></input>
 
 						</div>
 					</div>
@@ -104,7 +106,7 @@
 	
 		<div class="col-md-12 text-center ">
 		 	<input type="submit" class="btn btn-lg" value="{{textButtonCreatQuiz}}"
-				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}"></input>
+				ng-style="{'background-color': colorButtonCreatQuiz, 'color': colorText}"/></input>
 		</div>
 	
 
@@ -138,16 +140,16 @@
 
 					<span class="item-heading" translate="DESCRIPTION_QUIZ"></span>
 					<div class="item-options item-margin">
-						<!-- 							<input type="text" class="form-control" value="" -->
-						<!-- 								placeholder="Description du Quiz" ng-model="descriptionQuiz"> -->
+<%-- 													<form:input type="text" class="form-control" value="" --%>
+<%-- 														placeholder="Description du Quiz" ng-model="descriptionQuiz"/> --%>
 						<textarea class="form-control"
 							ng-model="descriptionQuiz"></textarea>
 					</div>
 
 					<span class="item-heading" translate="BUTTON_TEXT"></span>
 					<div class="item-options item-margin">
-						<input type="text" id="btn-text-input" class="form-control"
-							value="" ng-model="textButtonCreatQuiz">
+						<form:input path="buttonText" id="buttonText" type="text" class="form-control"
+							value="" ng-model="textButtonCreatQuiz"></form:input>
 					</div>
 
 					<span class="item-heading" translate="CUSTOM_LOGO"></span>
@@ -195,20 +197,20 @@
 									<span translate="EDIT_FONT"></span>
 								</h4>
 							</div>
-							<div class="modal-body">
+<!-- 							<div class="modal-body"> -->
 							
-										<input type="radio" class="selector"><span style="font-family: sans-serif">sans-serif : Voici un exemple</span></br>
-										<input type="radio" class="selector"><span class="selector" style="font-family: Arial">Arial : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Tahoma">Tahoma : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Trebuchet MS">Trebuchet MS : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Verdana">Verdana : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: serif">serif : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Times">Times : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Georgia">Georgia : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: monospace">monospace : Voici un exemple</span></br>
-										<input type="radio" ><span class="selector" style="font-family: Courier">Courier : Voici un exemple</span></br>
+<%-- 										<form:input type="radio" class="selector"><span style="font-family: sans-serif">sans-serif : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" class="selector"><span class="selector" style="font-family: Arial">Arial : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Tahoma">Tahoma : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Trebuchet MS">Trebuchet MS : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Verdana">Verdana : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: serif">serif : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Times">Times : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Georgia">Georgia : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: monospace">monospace : Voici un exemple</span></br> --%>
+<%-- 										<form:input type="radio" ><span class="selector" style="font-family: Courier">Courier : Voici un exemple</span></br> --%>
 								
-							</div>
+<!-- 							</div> -->
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">
 									<span translate="CLOSE"></span>
