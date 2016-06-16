@@ -25,6 +25,13 @@ import fr.marketing.quizbox.dao.ChoiceDao;
 import fr.marketing.quizbox.dao.ChoiceDaoImpl;
 import fr.marketing.quizbox.dao.QuizDao;
 import fr.marketing.quizbox.dao.QuizDaoImpl;
+import fr.marketing.quizbox.model.Choice;
+import fr.marketing.quizbox.model.Profile;
+import fr.marketing.quizbox.model.Question;
+import fr.marketing.quizbox.model.Quiz;
+import fr.marketing.quizbox.model.Result;
+import fr.marketing.quizbox.model.ResultCorelation;
+import fr.marketing.quizbox.model.User;
 import fr.marketing.quizbox.service.ChoiceService;
 import fr.marketing.quizbox.service.ChoiceServiceImpl;
 import fr.marketing.quizbox.service.QuestionService;
@@ -95,6 +102,13 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addPackages(new String[]{"fr.marketing.quizbox.model"});
+    	sessionBuilder.addAnnotatedClasses(Quiz.class);
+    	sessionBuilder.addAnnotatedClasses(Question.class);
+    	sessionBuilder.addAnnotatedClasses(Result.class);
+    	sessionBuilder.addAnnotatedClasses(User.class);
+    	sessionBuilder.addAnnotatedClasses(Profile.class);
+    	sessionBuilder.addAnnotatedClasses(ResultCorelation.class);
+    	sessionBuilder.addAnnotatedClasses(Choice.class); 
     	return sessionBuilder.buildSessionFactory();
     }
     
@@ -122,6 +136,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     public void configurePathMatch(PathMatchConfigurer matcher) {
         matcher.setUseRegisteredSuffixPatternMatch(true);
     }
+
     
     @Bean
     public QuizService quizService() {

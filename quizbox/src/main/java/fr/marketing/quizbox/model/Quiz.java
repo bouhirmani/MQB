@@ -21,19 +21,19 @@ public class Quiz implements java.io.Serializable {
 	@Column(name = "Id", unique = true, nullable = false)
 	private Integer id;
 	
-	@Column(name = "Background_Color", nullable = false, length = 10)
+	@Column(name = "Background_Color", nullable = true, length = 10)
 	private String backgroundColor;
 	
-	@Column(name = "Button_Color", nullable = false, length = 10)
+	@Column(name = "Button_Color", nullable = true, length = 10)
 	private String buttonColor;
 	
 	@Column(name = "Button_Text", nullable = false, length = 50)
 	private String buttonText;
 	
-	@Column(name = "Cover_Photo", nullable = false)
+	@Column(name = "Cover_Photo", nullable = true)
 	private byte coverPhoto;
 	
-	@Column(name = "Font_Color", nullable = false, length = 10)
+	@Column(name = "Font_Color", nullable = true, length = 10)
 	private String fontColor;
 	
 	@Column(name = "Font_Type", nullable = false, length = 50)
@@ -45,10 +45,10 @@ public class Quiz implements java.io.Serializable {
 	@Column(name = "Title", nullable = true, length = 256)
 	private String title;
 	
-	@Column(name = "Text_Color", nullable = false, length = 10)
+	@Column(name = "Text_Color", nullable = true, length = 10)
 	private String textColor;
 	
-	@Column(name = "Logo", nullable = false)
+	@Column(name = "Logo", nullable = true)
 	private byte logo;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")

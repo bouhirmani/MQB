@@ -18,7 +18,7 @@ public class QuizController {
 
 	@RequestMapping(value = { "/form/configuration"}, method = RequestMethod.POST)
 	public String newQuiz( Quiz quiz, ModelMap model) {
-		//service.saveQuiz(quiz);
+		service.saveQuiz(quiz);
 		return "redirect:/form/contenu";
 	}
 	

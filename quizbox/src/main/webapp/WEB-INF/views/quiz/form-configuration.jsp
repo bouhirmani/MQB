@@ -45,7 +45,7 @@
 							<input type="text" class="form-control color-picker"
 								ng-style="{'background-color': colorBackground}"
 								readonly="readonly"></input> 
-								<input colorpicker  path="bgrColor" id="bgrColor"
+								<input colorpicker  name="bgrColor" id="bgrColor"
 								ng-model="colorBackground" type="text"></input>
 						</div>
 					</div>
@@ -120,7 +120,7 @@
 					
 					<span class="item-heading" translate="FONT_TYPE"></span>
 					<div class="item-options item-margin">
-						<select ng-model="fontType">
+						<form:select path="fontType" id="fontType" ng-model="fontType">
 						     <option style="font-family: 'Comic Sans MS'" value="Comic Sans MS">Comic Sans MS</option>
 						     <option style="font-family: Arial" value="Arial">Arial</option>
 						     <option style="font-family: 'Times New Roman'" value="Times New Roman">Times New Roman</option>
@@ -133,7 +133,7 @@
 						     <option style="font-family: 'Georgia'" value="Georgia">Georgia</option>
 						     <option style="font-family: 'monospace'" value="monospace">monospace</option>
 						     <option style="font-family: 'Courier'" value="Courier">Courier</option>
-					  	</select>
+					  	</form:select>
 <!-- 						<button type="button" class="btn btn-primary" -->
 <!-- 							data-toggle="modal" data-target="#fontModal"><span translate="CHANGE"></span></button> -->
 					</div>
@@ -142,8 +142,8 @@
 					<div class="item-options item-margin">
 <%-- 													<form:input type="text" class="form-control" value="" --%>
 <%-- 														placeholder="Description du Quiz" ng-model="descriptionQuiz"/> --%>
-						<textarea class="form-control"
-							ng-model="descriptionQuiz"></textarea>
+						<form:textarea path="description" id="description" class="form-control"
+							ng-model="descriptionQuiz"></form:textarea>
 					</div>
 
 					<span class="item-heading" translate="BUTTON_TEXT"></span>
