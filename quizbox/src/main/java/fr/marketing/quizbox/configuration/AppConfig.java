@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -47,9 +50,12 @@ import fr.marketing.quizbox.service.ResultServiceImpl;
 @EnableTransactionManagement
 @EnableWebMvc
 @ComponentScan(basePackages = "fr.marketing.quizbox")
+@PropertySource(value = { "classpath:application.properties" })
 public class AppConfig extends WebMvcConfigurerAdapter{
 	
-
+	@Autowired
+    private Environment environment;
+	
 	@Bean
 	public TilesConfigurer tilesConfigurer(){
 	    TilesConfigurer tilesConfigurer = new TilesConfigurer();
@@ -78,16 +84,25 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     
     
     @Bean(name = "dataSource")
-    public DataSource getDataSource() {
-    	BasicDataSource dataSource = new BasicDataSource();
-    	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-    	dataSource.setUrl("jdbc:mysql://localhost:3306/mqb");
-    	dataSource.setUsername("root");
-    	dataSource.setPassword("admin");
-    	
-    	return dataSource;
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
+        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
+        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+        return dataSource;
     }
     
+//    public DataSource getDataSource() {
+//    	BasicDataSource dataSource = new BasicDataSource();
+//    	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//    	dataSource.setUrl("jdbc:mysql://localhost:3306/mqb");
+//    	dataSource.setUsername("root");
+//    	dataSource.setPassword("admin");
+//    	
+//    	return dataSource;
+//    }
+//    
     
     private Properties getHibernateProperties() {
     	Properties properties = new Properties();
