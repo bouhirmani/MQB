@@ -11,16 +11,17 @@ USE `mqb`;
 
 CREATE TABLE IF NOT EXISTS `quiz` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `Background_Color` varchar(10) NOT NULL,
-  `Button_Color` varchar(10) NOT NULL,
+  `Background_Color` varchar(10),
+  `Button_Color` varchar(10),
   `Button_Text` varchar(50) NOT NULL,
-  `Cover_Photo` blob NOT NULL, 
-  `Font_Color` varchar(10) NOT NULL,
+  `Cover_Photo` blob, 
+  `Font_Color` varchar(10),
   `Font_Type` varchar(50) NOT NULL,
   `Description` varchar(256),
   `Title` varchar(256),
-  `Text_Color` varchar(10) NOT NULL,
-  `Logo` blob NOT NULL, 
+  `Text_Color` varchar(10),
+  `Logo` blob, 
+  `Draft` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

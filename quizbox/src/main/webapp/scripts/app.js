@@ -27,7 +27,11 @@ App.config(function ($translateProvider) {
 		CHANGE_LOGO:'Change logo',
 		DELETE_LOGO:'Delete logo',
 		EDIT_FONT:'Edit font type',
-		CLOSE:'Close'
+		CLOSE:'Close',
+		DRAFT_QUIZ: 'My draft Quizes',
+		NO_DRAFT_QUIZ: 'No draft Quizes',
+		PUBLISH_QUIZ: 'My Published Quizes',
+		NO_PUBLISH_QUIZ: 'No Published Quizes'
 		
 	});
 	$translateProvider.translations('fr', {
@@ -55,7 +59,11 @@ App.config(function ($translateProvider) {
 		CHANGE_LOGO:'Modifier logo',
 		DELETE_LOGO:'Supprimer logo',
 		EDIT_FONT:'Changer la police',
-		CLOSE:'Fermer'
+		CLOSE:'Fermer',
+		DRAFT_QUIZ: 'Mes Quizs brouillons',
+		PUBLISH_QUIZ: 'Mes Quizs publiés',
+		NO_DRAFT_QUIZ: 'Aucun Quiz brouillon',
+		NO_PUBLISH_QUIZ: 'Aucun Quiz publié'
 	});
 	$translateProvider.preferredLanguage('fr');
 });

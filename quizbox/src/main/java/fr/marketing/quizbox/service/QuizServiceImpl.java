@@ -56,6 +56,10 @@ public class QuizServiceImpl implements QuizService {
     public List<Quiz> findAllQuizs() {
         return dao.findAllQuizs();
     }
+    
+    public List<Quiz> findAllDraftQuizs() {
+        return dao.findAllDraftQuizs();
+    }
  
     public Quiz findQuizById(Integer id) {
         return dao.findQuizById(id);

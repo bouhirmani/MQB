@@ -16,6 +16,7 @@ public class QuizDaoImpl extends AbstractDao<Integer, Quiz> implements QuizDao {
     }
  
     public void saveQuiz(Quiz quiz) {
+    	quiz.setDraft(1);
         persist(quiz);
     }
  
@@ -28,6 +29,14 @@ public class QuizDaoImpl extends AbstractDao<Integer, Quiz> implements QuizDao {
     @SuppressWarnings("unchecked")
     public List<Quiz> findAllQuizs() {
         Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("draft", 0));
+        return (List<Quiz>) criteria.list();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Quiz> findAllDraftQuizs() {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("draft", 1));
         return (List<Quiz>) criteria.list();
     }
  

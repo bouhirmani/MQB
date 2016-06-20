@@ -48,6 +48,9 @@ public class Quiz implements java.io.Serializable {
 	@Column(name = "Text_Color", nullable = true, length = 10)
 	private String textColor;
 	
+	@Column(name = "Draft", nullable = false)
+	private int draft;
+	
 	@Column(name = "Logo", nullable = true)
 	private byte logo;
 	
@@ -64,7 +67,7 @@ public class Quiz implements java.io.Serializable {
 	}
 	
 	public Quiz(String backgroundColor, String buttonColor, String buttonText, byte coverPhoto, String fontColor,
-			String fontType, String description, String title, String textColor, byte logo, Set<Question> questions, Set<Result> results, Set<User> users) {
+			String fontType, String description, String title, String textColor, byte logo, Set<Question> questions, Set<Result> results, Set<User> users, int draft) {
 		super();
 		this.backgroundColor = backgroundColor;
 		this.buttonColor = buttonColor;
@@ -79,10 +82,11 @@ public class Quiz implements java.io.Serializable {
 		this.questions = questions;
 		this.results = results;
 		this.users = users;
+		this.draft = draft;
 	}
 
 	public Quiz(String backgroundColor, String buttonColor, String buttonText, byte coverPhoto, String fontColor,
-			String fontType, String description, String title, String textColor, byte logo) {
+			String fontType, String description, String title, String textColor, byte logo, int draft) {
 		super();
 		this.backgroundColor = backgroundColor;
 		this.buttonColor = buttonColor;
@@ -94,6 +98,7 @@ public class Quiz implements java.io.Serializable {
 		this.title = title;
 		this.textColor = textColor;
 		this.logo = logo;
+		this.draft = draft;
 	}
 
 
@@ -210,6 +215,16 @@ public class Quiz implements java.io.Serializable {
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
+
+	public int getDraft() {
+		return draft;
+	}
+
+	public void setDraft(int draft) {
+		this.draft = draft;
+	}
+	
+	
 
 }
 

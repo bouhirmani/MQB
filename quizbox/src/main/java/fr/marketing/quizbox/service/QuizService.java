@@ -15,6 +15,8 @@ public interface QuizService {
     void deleteQuizById(Integer id);
  
     List<Quiz> findAllQuizs(); 
+    
+    List<Quiz> findAllDraftQuizs(); 
      
     Quiz findQuizById(Integer id);
  
