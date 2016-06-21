@@ -17,32 +17,43 @@
 	<div class="row">
 
 		<div class="col-lg-12">
-			<h3 class="page-header">Mes Quiz Publiés</h3>
+			<h3 class="page-header" translate="PUBLISH_QUIZ"></h3>
 		</div>
+		<c:if test = "${quizs.isEmpty()}">
+			<div class="col-sm-3 col-xs-6">
+				<span translate="NO_PUBLISH_QUIZ"></span>
+			</div>
+		</c:if>
+		<c:forEach items="${quizs}" var="quiz">
+			<div class="col-sm-3 col-xs-6">
+				<div > 
+				${quiz.title}
+				<img class="img-responsive portfolio-item"
+					src="<c:url value='/resources/img/cover-placeholder.jpg'/>" alt=""  title="">
+				</div>
+			</div>
+		</c:forEach>	
+		
+		
+		<div class="col-lg-12">
+			<h3 class="page-header" translate="DRAFT_QUIZ"></h3>
+		</div>
+		<c:if test = "${draftQuizs.isEmpty()}">
+			<div class="col-sm-3 col-xs-6">
+				<span translate="NO_DRAFT_QUIZ"></span>
+			</div>
+		</c:if>
+		<c:forEach items="${draftQuizs}" var="quiz">
+			<div class="col-sm-2 col-xs-6 img-thumbnail"  style="margin: 5px;">
+				<div > 
+				${quiz.title}
+				<img class="img-responsive portfolio-item"
+					src="<c:url value='/resources/img/cover-placeholder.jpg'/>" alt=""  title="">
+				</div>
+			</div>
+		</c:forEach>	
 
-		<div class="col-sm-3 col-xs-6">
-			<a href="#"> <img class="img-responsive portfolio-item"
-				src="http://placehold.it/500x300" alt="">
-			</a>
-		</div>
-
-		<div class="col-sm-3 col-xs-6">
-			<a href="#"> <img class="img-responsive portfolio-item"
-				src="http://placehold.it/500x300" alt="">
-			</a>
-		</div>
-
-		<div class="col-sm-3 col-xs-6">
-			<a href="#"> <img class="img-responsive portfolio-item"
-				src="http://placehold.it/500x300" alt="">
-			</a>
-		</div>
-
-		<div class="col-sm-3 col-xs-6">
-			<a href="#"> <img class="img-responsive portfolio-item"
-				src="http://placehold.it/500x300" alt="">
-			</a>
-		</div>
+		
 
 	</div>
 	<!-- /.row -->
