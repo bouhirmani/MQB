@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="<c:url value='/resources/css/configuration.css'/>" />
 
 </head>
-<body ng-app="myApp" ng-controller="MainCtrl">
+<body ng-app="myApp" ng-controller="MainCtrl" style="background-color: rgba(0, 0, 0, 0.04);">
 	
 		<header id="header">
 			<tiles:insertAttribute name="header" />
@@ -34,6 +34,7 @@
 		</footer>
 
 	<script type="text/javascript" src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>" > </script>
+	<script type="text/javascript" src="<c:url value='/resources/js/jquery-ui.min.js'/>" > </script>
 	<script type="text/javascript" src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/>" > </script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
@@ -44,6 +45,8 @@
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow-standalone.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/resources/flow/ng-flow.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/resources/js/angular-translate.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/resources/tinymce/tinymce.min.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/resources/tinymce/ui-tinymce.js'/>"></script>
 	
 </body>
 </html>

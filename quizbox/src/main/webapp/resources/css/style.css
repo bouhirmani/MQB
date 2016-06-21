@@ -251,21 +251,32 @@ panel.panel-default {
 /**************btn-round**************/
 /*************Remove style***********/
 .remove{
-    background: #C76868;
+    background: #fb7d00;
     color: #FFF;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 15px;
     border: 0;
     cursor: pointer;
     display: inline-block;
     padding: 4px 9px;
     vertical-align: top;
-    line-height: 100%;   
+    line-height: 100%; 
 }
-/***********************************/
 
+/***********************************/
 .button{
 	background-color: #262626;
 	color: white;
 }
-
+/*************spacer**********************/
+.spacer{
+	margin:5px;
+}
+.spacer2{
+	margin:20px;
+}
+/********************************************/
+.breadcrumb > li + li:before {
+     content: "\00BB";
+     color: #D2322D;
+}

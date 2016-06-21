@@ -1,4 +1,4 @@
-var App = angular.module('myApp', [ 'ngAnimate',
+var App = angular.module('myApp', [ 'ngAnimate','ui.tinymce',
                                     'colorpicker.module', 'flow','pascalprecht.translate']);
 
 App.config(function ($translateProvider) {

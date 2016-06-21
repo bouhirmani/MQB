@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div>
-				<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/form">
+				<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/form/configuration">
 					<span class="fa fa-list-alt fa-3x"></span> 
 				    Quiz D'évaluation
 				</a>

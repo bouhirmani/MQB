@@ -109,8 +109,13 @@ App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
 	  $scope.questions[index].answers.splice(lastAnswer);
 	};
 		
-	
-	
+	$scope.optionsTinyMce = {
+		language: "fr_FR",
+		statusbar: false,
+		menubar: false,
+		toolbar_items_size : 'small',
+		theme: "modern",
+	};
 	
 }]);
 

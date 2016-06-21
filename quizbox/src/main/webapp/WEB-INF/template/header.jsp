@@ -42,3 +42,17 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div>
+	<ul class="breadcrumb">
+	  <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
+	  <li><a href="${pageContext.request.contextPath}/choice">Choice</a></li>
+	  <li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+	  <li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>
+	</ul>
+
+</div>
+
+
+
+

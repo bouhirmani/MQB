@@ -33,10 +33,6 @@ public class AppController {
 		return "choice";
 	}
 	
-	@RequestMapping(value = { "/form"}, method = RequestMethod.GET)
-	public String formPage(ModelMap model) {
-		return "form";
-	}
 	
 	@RequestMapping(value = { "/form/configuration"}, method = RequestMethod.GET)
 	public String formConfigurationPage(ModelMap model) {
