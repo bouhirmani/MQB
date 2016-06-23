@@ -44,13 +44,26 @@
 </nav>
 
 <div>
-	<ul class="breadcrumb">
+	<ul id="breadcrumbs-two">
 	  <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-	  <li><a href="${pageContext.request.contextPath}/choice">Choice</a></li>
-	  <li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
-	  <li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>
+	  <c:choose>
+	  	<c:when test='${requestScope["javax.servlet.forward.request_uri"] eq "/quizbox/choice"}'>
+	  		<li><a href="${pageContext.request.contextPath}/choice">Choice</a></li>
+	  	</c:when>
+	  	<c:when test='${requestScope["javax.servlet.forward.request_uri"] eq "/quizbox/form/configuration"}'>
+	  		<li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+	  	</c:when>
+	  	<c:when test='${requestScope["javax.servlet.forward.request_uri"] eq "/quizbox/form/contenu"}'>
+			<li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+			<li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>	  		
+	  	</c:when>
+	  	<c:when test='${requestScope["javax.servlet.forward.request_uri"] eq "/quizbox/form/formulaire"}'>
+			<li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+			<li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>	  		
+			<li><a href="${pageContext.request.contextPath}/form/formulaire">Formulaire</a></li>	  		
+	  	</c:when>
+	  </c:choose>
 	</ul>
-
 </div>
 
 

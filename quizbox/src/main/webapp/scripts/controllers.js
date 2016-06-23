@@ -46,7 +46,7 @@ App.controller('MainCtrl', ['$scope', '$http', '$translate', function ($scope, $
 App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
 
 	//******Results*******
-	$scope.results=[{id:'1' ,image:'',title:'',description:''}];
+	$scope.results=[{id:'1' ,image:'',title:'result 1',description:'description 1'}];
 	  
 	$scope.addNewResult = function() {
 	  var newResult = $scope.results.length+1;
@@ -104,17 +104,21 @@ App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
 	  $scope.questions[index].answers.push({id:newAnswer ,image:'',title:''});
 	};
 	    
-	$scope.removeAnswer = function(index) {
-	  var lastAnswer = $scope.questions[index].answers.length-1;
-	  $scope.questions[index].answers.splice(lastAnswer);
+	$scope.removeAnswer = function(parentIndex,index) {
+//		console.log("ParentIndex: "+parentIndex);
+//		console.log("Index: "+index);
+		var lastAnswer = $scope.questions[parentIndex].answers.length-1;
+		$scope.questions[parentIndex].answers.splice(index,1);
 	};
 		
 	$scope.optionsTinyMce = {
 		language: "fr_FR",
 		statusbar: false,
 		menubar: false,
+		theme: 'modern',
 		toolbar_items_size : 'small',
-		theme: "modern",
+		toolbar1:'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | forecolor backcolor',
+		plugins: "textcolor"	
 	};
 	
 }]);

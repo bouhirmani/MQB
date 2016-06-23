@@ -44,6 +44,9 @@ public class AppController {
 	public String formContenuPage(ModelMap model) {
 		return "contenu";
 	}
-	
+	@RequestMapping(value = { "/form/formulaire"}, method = RequestMethod.GET)
+	public String formFormulairePage(ModelMap model) {
+		return "formulaire";
+	}
 	 
 }

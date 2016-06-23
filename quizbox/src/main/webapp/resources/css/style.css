@@ -262,6 +262,18 @@ panel.panel-default {
     vertical-align: top;
     line-height: 100%; 
 }
+.remove2{
+    background: #94c10b;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 9px;
+    vertical-align: top;
+    line-height: 100%; 
+}
 
 /***********************************/
 .button{
@@ -276,7 +288,67 @@ panel.panel-default {
 	margin:20px;
 }
 /********************************************/
-.breadcrumb > li + li:before {
-     content: "\00BB";
-     color: #D2322D;
+#breadcrumbs-two{
+  overflow: hidden;
+  width: 100%;
+}
+
+#breadcrumbs-two li{
+  float: left;
+  margin: 0 .5em 0 1em;
+}
+
+#breadcrumbs-two a{
+  background: rgb(217, 83, 79);
+  padding: .7em 1em;
+  float: left;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+  position: relative;
+}
+
+#breadcrumbs-two a:hover{
+  background: #99db76;
+}
+
+#breadcrumbs-two a::before{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -1.5em;   
+  border-width: 1.5em 0 1.5em 1em;
+  border-style: solid;
+  border-color: rgb(217, 83, 79) rgb(217, 83, 79) rgb(217, 83, 79) transparent;
+  left: -1em;
+}
+
+#breadcrumbs-two a:hover::before{
+  border-color: #99db76 #99db76 #99db76 transparent;
+}
+
+#breadcrumbs-two a::after{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -1.5em;   
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid rgb(217, 83, 79);
+  right: -1em;
+}
+
+#breadcrumbs-two a:hover::after{
+  border-left-color: #99db76;
+}
+
+#breadcrumbs-two .current,
+#breadcrumbs-two .current:hover{
+  font-weight: bold;
+  background: none;
+}
+
+#breadcrumbs-two .current::after,
+#breadcrumbs-two .current::before{
+  content: normal;
 }

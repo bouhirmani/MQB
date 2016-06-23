@@ -145,12 +145,34 @@
 													</div>
 												</div>
 											</div>
-											<textarea class="form-control" ui-tinymce="optionsTinyMce" rows="2" placeholder="Answer {{answer.id}}" ng-model="answer.title"></textarea>
+											<textarea class="form-control" rows="2" placeholder="Answer {{answer.id}}" ng-model="answer.title"></textarea>
 											<div class="form-group">
-												<label class="form-label">Results correlations</label>
-												<select class="form-control" ng-model="result"
-														ng-options="result.title for result in results track by result.id">
-												</select>
+												Results correlations
+												<div ng-repeat="result in results">
+													<div class="row">
+														<div class="col-md-6">
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" value="{{result}}" ng-model="checked" name="answerResults"/>{{result.title}}
+																</label>
+															</div>
+														</div>
+														<div class="col-md-5">
+															<div ng-show="checked">
+																<select class="selectpicker form-control">
+																	<option value="-3">-3</option>
+																	<option value="-2">-2</option>
+																	<option value="-1">-1</option>
+																	<option value="0" selected="selected">0</option>
+																	<option value="1">1</option>
+																	<option value="2">2</option>
+																	<option value="3">3</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+											<button class="remove2 pull-right" ng-click="removeAnswer($parent.$index,$index)">-</button>
 											</div>
 										</div>
 									</div>
