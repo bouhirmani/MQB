@@ -11,6 +11,6 @@ import fr.marketing.quizbox.dao.ResultCorrelationDao;
 @Transactional
 public class ResultCorrelationServiceImpl implements ResultCorrelationService{
 
-//	@Autowired
-//	ResultCorrelationDao resultCorrelationDao;
+	@Autowired
+	ResultCorrelationDao resultCorrelationDao;
 }

@@ -12,6 +12,6 @@ import fr.marketing.quizbox.dao.ResultDao;
 public class ResultServiceImpl implements ResultService{
 
 	
-//	@Autowired
-//	ResultDao resultDao;
+	@Autowired
+	ResultDao resultDao;
 }

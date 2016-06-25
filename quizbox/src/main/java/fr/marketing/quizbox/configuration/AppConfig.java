@@ -26,8 +26,14 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import fr.marketing.quizbox.dao.ChoiceDao;
 import fr.marketing.quizbox.dao.ChoiceDaoImpl;
+import fr.marketing.quizbox.dao.QuestionDao;
+import fr.marketing.quizbox.dao.QuestionDaoImpl;
 import fr.marketing.quizbox.dao.QuizDao;
 import fr.marketing.quizbox.dao.QuizDaoImpl;
+import fr.marketing.quizbox.dao.ResultCorrelationDao;
+import fr.marketing.quizbox.dao.ResultCorrelationDaoImpl;
+import fr.marketing.quizbox.dao.ResultDao;
+import fr.marketing.quizbox.dao.ResultDaoImpl;
 import fr.marketing.quizbox.model.Choice;
 import fr.marketing.quizbox.model.Profile;
 import fr.marketing.quizbox.model.Question;
@@ -184,8 +190,19 @@ public class AppConfig extends WebMvcConfigurerAdapter{
         return new ChoiceDaoImpl();
     }
 
+    @Bean
+    public QuestionDao questionDao() {
+        return new QuestionDaoImpl();
+    }
     
+    @Bean
+    public ResultDao resultDao () {
+        return new ResultDaoImpl();
+    }
     
-    
+    @Bean
+    public ResultCorrelationDao correlationDao(){
+        return new ResultCorrelationDaoImpl();
+    }
 }
 

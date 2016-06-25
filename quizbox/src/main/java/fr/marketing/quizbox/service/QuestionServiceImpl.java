@@ -11,7 +11,7 @@ import fr.marketing.quizbox.dao.QuestionDao;
 @Transactional
 public class QuestionServiceImpl implements QuestionService {
 	
-//	@Autowired
-//	QuestionDao questionDao;
+	@Autowired
+	QuestionDao questionDao;
 
 }

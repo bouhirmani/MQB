@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS `quiz` (
   `Font_Type` varchar(50) NOT NULL,
   `Description` varchar(256),
   `Title` varchar(256),
-  `Text_Color` varchar(10),
   `Logo` blob, 
   `Draft` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id`)
