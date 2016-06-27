@@ -20,6 +20,7 @@ public class AppController {
 
 	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
+		
 		List<Quiz> quizs = service.findAllQuizs();
         model.addAttribute("quizs", quizs);
         
@@ -34,19 +35,24 @@ public class AppController {
 	}
 	
 	
-	@RequestMapping(value = { "/form/configuration"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/form/configuration"}, method = RequestMethod.GET)
 	public String formConfigurationPage(ModelMap model) {
 		Quiz quiz = new Quiz();
         model.addAttribute("quiz", quiz);
 		return "configuration";
 	}
-	@RequestMapping(value = { "/form/contenu"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/form/contenu"}, method = RequestMethod.GET)
 	public String formContenuPage(ModelMap model) {
 		return "contenu";
 	}
-	@RequestMapping(value = { "/form/formulaire"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/form/formulaire"}, method = RequestMethod.GET)
 	public String formFormulairePage(ModelMap model) {
 		return "formulaire";
+	}
+	
+	@RequestMapping(value = {"/form/offre"}, method = RequestMethod.GET)
+	public String formOffrePage(ModelMap model) {
+		return "offre";
 	}
 	 
 }

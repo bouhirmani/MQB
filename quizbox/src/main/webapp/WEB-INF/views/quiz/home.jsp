@@ -48,7 +48,7 @@
 				<div > 
 				${quiz.title}
 				<img class="img-responsive portfolio-item"
-					src="<c:url value='/resources/img/cover-placeholder.jpg'/>" alt=""  title="">
+					src="" alt=""  title="" /> ${quiz.coverPhoto}
 				</div>
 			</div>
 		</c:forEach>	

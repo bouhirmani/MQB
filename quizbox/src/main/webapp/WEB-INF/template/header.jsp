@@ -62,6 +62,13 @@
 			<li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>	  		
 			<li><a href="${pageContext.request.contextPath}/form/formulaire">Formulaire</a></li>	  		
 	  	</c:when>
+	  	
+	  	<c:when test='${requestScope["javax.servlet.forward.request_uri"] eq "/quizbox/form/offre"}'>
+			<li><a href="${pageContext.request.contextPath}/form/configuration">Configuration</a></li>
+			<li><a href="${pageContext.request.contextPath}/form/contenu">Contenu</a></li>	  		
+			<li><a href="${pageContext.request.contextPath}/form/formulaire">Formulaire</a></li>	  		
+			<li><a href="${pageContext.request.contextPath}/form/Offre">Offre</a></li>	  		
+	  	</c:when>
 	  </c:choose>
 	</ul>
 </div>

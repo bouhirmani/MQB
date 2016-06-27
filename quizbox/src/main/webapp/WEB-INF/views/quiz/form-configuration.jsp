@@ -1,6 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<form:form method="POST" modelAttribute="quiz">
+<form:form method="POST" commandName="quiz"> 
 <div id="edit-container" ng-controller="formDebutCtrl"
 	flow-init="{singleFile:true}"
 	flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
@@ -94,9 +94,16 @@
 					<img alt="Brand" class="img-rounded img-responsive quiz-image"
 						src="<c:url value='/resources/img/cover-placeholder.jpg'/>" />
 				</div>
+				<script> 
+                  function onLoad(){  
+                      var src = document.getElementById('quizPhoto').src;
+                      document.getElementById("quizPhoto64").value = src;
+                  }
+                 </script>
 				<div class="img-rounded img-responsive quiz-image" ng-show="$flow.files.length">
-					<img flow-img="$flow.files[0]" width="400px" id="image" />
+					<img flow-img="$flow.files[0]" width="400px" id="quizPhoto"  />
 				</div>
+				<input type="text" name="quizPhoto64" name="quizPhoto64" id="quizPhoto64" hidden="hidden"/>
 			</div>
 		</div>
 		<div class=" col-md-12 text-center ">
@@ -159,10 +166,16 @@
 							<img alt="Brand" class="img-rounded img-responsive" width="100px"
 								src="<c:url value='/resources/img/logo-placeholder.png'/>" />
 						</div>
-						<div class="img-rounded img-responsive"
-							ng-show="$flow.files.length">
-							<img flow-img="$flow.files[0]" width="100px" id="image" />
+						<script> 
+	                        function onLoad(){  
+	                            var src = document.getElementById('logoPhoto').src;
+	                            document.getElementById("logoPhoto64").value = src;
+	                        }
+                        </script>
+						<div class="img-rounded img-responsive" ng-show="$flow.files.length">
+							<img flow-img="$flow.files[0]" width="100px" id="logoPhoto" onload="onLoad()"/>
 						</div>
+						<input type="text" name="logoPhoto64" id="logoPhoto64"  hidden="hidden"/>
 						<span class="btn btn-sm button" ng-show="!$flow.files.length"
 							flow-btn>
 							<span translate="UPLOAD_LOGO"></span>

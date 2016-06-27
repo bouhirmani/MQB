@@ -121,7 +121,17 @@ App.controller('ContenuCtrl', ['$scope', '$http', function($scope, $http){
 		plugins: "textcolor"	
 	};
 	
+	$scope.imageStrings = [];
+	  $scope.processFiles = function(files){
+	    angular.forEach(files, function(flowFile, i){
+	     $scope.onload = function (event) {
+	            var uri = event.target.result;
+	            console.log("uri",uri);
+	              $scope.imageStrings[i] = uri;     
+	          };
+	          fileReader.readAsDataURL(flowFile.file);
+	    });
+	  };
+	      
+	
 }]);
-
-
-

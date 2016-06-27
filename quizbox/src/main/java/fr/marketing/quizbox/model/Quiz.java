@@ -1,6 +1,5 @@
 package fr.marketing.quizbox.model;
 
-import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,7 +31,7 @@ public class Quiz implements java.io.Serializable {
 	private String buttonText;
 	
 	@Column(name = "Cover_Photo", nullable = true)
-	private Blob coverPhoto;
+	private byte[] coverPhoto;
 	
 	@Column(name = "Font_Color", nullable = true, length = 10)
 	private String fontColor;
@@ -50,7 +49,7 @@ public class Quiz implements java.io.Serializable {
 	private int draft;
 	
 	@Column(name = "Logo", nullable = true)
-	private Blob logo;
+	private byte[] logo;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")
 	private Set<Question> questions = new HashSet<Question>(0);
@@ -64,8 +63,8 @@ public class Quiz implements java.io.Serializable {
 	public Quiz() {
 	}
 	
-	public Quiz(String backgroundColor, String buttonColor, String buttonText, Blob coverPhoto, String fontColor,
-			String fontType, String description, String title, Blob logo, Set<Question> questions, Set<Result> results, Set<User> users, int draft) {
+	public Quiz(String backgroundColor, String buttonColor, String buttonText, byte[] coverPhoto, String fontColor,
+			String fontType, String description, String title, byte[] logo, Set<Question> questions, Set<Result> results, Set<User> users, int draft) {
 		super();
 		this.backgroundColor = backgroundColor;
 		this.buttonColor = buttonColor;
@@ -82,8 +81,8 @@ public class Quiz implements java.io.Serializable {
 		this.draft = draft;
 	}
 
-	public Quiz(String backgroundColor, String buttonColor, String buttonText, Blob coverPhoto, String fontColor,
-			String fontType, String description, String title, Blob logo, int draft) {
+	public Quiz(String backgroundColor, String buttonColor, String buttonText, byte[] coverPhoto, String fontColor,
+			String fontType, String description, String title, byte[] logo, int draft) {
 		super();
 		this.backgroundColor = backgroundColor;
 		this.buttonColor = buttonColor;
@@ -132,11 +131,11 @@ public class Quiz implements java.io.Serializable {
 		this.buttonText = buttonText;
 	}
 
-	public Blob getCoverPhoto() {
+	public byte[] getCoverPhoto() {
 		return coverPhoto;
 	}
 
-	public void setCoverPhoto(Blob coverPhoto) {
+	public void setCoverPhoto(byte[] coverPhoto) {
 		this.coverPhoto = coverPhoto;
 	}
 
@@ -172,11 +171,11 @@ public class Quiz implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public Blob getLogo() {
+	public byte[] getLogo() {
 		return logo;
 	}
 
-	public void setLogo(Blob logo) {
+	public void setLogo(byte[] logo) {
 		this.logo = logo;
 	}
 
@@ -211,7 +210,14 @@ public class Quiz implements java.io.Serializable {
 	public void setDraft(int draft) {
 		this.draft = draft;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Quiz [id=" + id + ", backgroundColor=" + backgroundColor + ", buttonColor=" + buttonColor
+				+ ", buttonText=" + buttonText + ", coverPhoto=" + coverPhoto + ", fontColor=" + fontColor
+				+ ", fontType=" + fontType + ", description=" + description + ", title=" + title + ", draft=" + draft
+				+ ", logo=" + logo + ", questions=" + questions + ", results=" + results + ", users=" + users + "]";
+	}
 	
 
 }

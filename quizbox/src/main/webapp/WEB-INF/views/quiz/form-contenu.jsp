@@ -1,36 +1,47 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div ng-controller="ContenuCtrl" >
 <div class="container" style="background-color: rgba(0, 0, 0, 0.04);">
-<div class="col-md-8">
+<div class="col-md-10 col-md-offset-1" >
 	 <fieldset id="myFieldset">
 		<legend>Quiz Title & Description</legend> 
 		<div class="panel">
 			<div class="panel-body">
-		<div class="col-md-4">
-			<div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-				<div>
-					<img src="<c:url value='/resources/img/image.png'/>" class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" />
+				<div class="col-md-4">
+					<div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+						<div ng-hide="$flow.files.length">
+							<img class="img-rounded" src="<c:url value='/resources/img/image.png'/>" width="200px" height="110px" />
+						</div>
+						<div ng-show="$flow.files.length">
+				       		<script> 
+	                            function onLoad(){  
+	                                var src = document.getElementById('imageQuiz').src;
+	                                document.getElementById("imgsrcQuiz").value = src;
+	                                alert("onLoad");
+	                            }
+                            </script>
+							<img class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" id="imageQuiz" onload="onLoad()"/>
+						</div>
+						<div class="spacer"></div>
+						<div>
+							<button class="btn btn-primary btn-xs btn-round" ng-show="!$flow.files.length" flow-btn>
+								<span class="fa fa-pencil-square-o"></span>
+							</button>
+							<button class="btn btn-info btn-xs btn-round" ng-show="$flow.files.length" flow-btn>
+								<span class="fa fa-pencil-square-o"></span>
+							</button>
+							<button type="button" class="btn btn-danger btn-xs btn-round" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+								<span class="fa fa-trash-o"></span>
+							</button>
+						</div>
+						 <input type="text" name="imgsrcQuiz" id="imgsrcQuiz" />
+					</div>
 				</div>
-				<div class="spacer"></div>
-				<div>
-					<button class="btn btn-primary btn-xs btn-round" ng-show="!$flow.files.length" flow-btn>
-						<span class="fa fa-pencil-square-o"></span>
-					</button>
-					<button class="btn btn-info btn-xs btn-round" ng-show="$flow.files.length" flow-btn>
-						<span class="fa fa-pencil-square-o"></span>
-					</button>
-					<button type="button" class="btn btn-danger btn-xs btn-round" ng-show="$flow.files.length" ng-click="$flow.cancel()">
-						<span class="fa fa-trash-o"></span>
-					</button>
+				<div class="col-md-7">
+					<input type="text" class="form-control" placeholder="Results Title" name="" ng-model="result.title"/>
+					<div class="spacer"></div>
+					<textarea class="form-control" ui-tinymce="optionsTinyMce" rows="5" placeholder="Description" ng-model="result.description"></textarea>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-7">
-			<input type="text" class="form-control" placeholder="Results Title" name="" ng-model="result.title"/>
-			<div class="spacer"></div>
-			<textarea class="form-control" ui-tinymce="optionsTinyMce" rows="5" placeholder="Description" ng-model="result.description"></textarea>
-		</div>
-		</div>
 		</div>
 	</fieldset>
 	<div class="spacer2"></div>
@@ -44,9 +55,14 @@
 					<div class="panel-body">
 						<div class="col-md-4">
 							<div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-								<div>
-									<img src="<c:url value='/resources/img/image.png'/>"
-										 class="img-rounded"  class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="result.image" />
+								<div ng-hide="$flow.files.length">
+									<img class="img-rounded" src="<c:url value='/resources/img/image.png'/>" width="200px" height="110px" />
+								</div>
+								<div ng-show="$flow.files.length">
+									<div>
+										<img src="<c:url value='/resources/img/image.png'/>"
+											 class="img-rounded" class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="result.image" />
+									</div>
 								</div>
 								<div class="spacer"></div>
 								<div>
@@ -72,7 +88,9 @@
 			</div>
 		<button type="button" class="btn btn-sm btn-danger" ng-click="addNewResult()"><span class="fa fa-plus"></span> Add Result</button>
 	</fieldset>
-<div class="spacer2"></div>
+	
+	<div class="spacer2"></div>
+	
 	<fieldset>
 		<legend>Quiz Questions</legend>
 			<div ng-repeat="question in questions">
@@ -95,8 +113,14 @@
 											ng-model="question.title"/>
 										<div ng-show="question.image">
 											<div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-												<div>
-													<img src="<c:url value='/resources/img/image.png'/>" class="img-rounded" class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="question.image" />
+												<div ng-hide="$flow.files.length">
+													<img class="img-rounded" src="<c:url value='/resources/img/image.png'/>" width="200px" height="110px" />
+												</div>
+												<div ng-show="$flow.files.length">
+													<img class="img-rounded" src="<c:url value='/resources/img/image.png'/>" width="200px" height="110px" />
+												</div>
+												<div ng-show="$flow.files.length">
+													<img class="img-rounded" class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="question.image" />
 												</div>
 												<div class="spacer"></div>
 												<div>
@@ -129,8 +153,11 @@
 										<div class="caption">
 											<div ng-show="question.answers[0].image">
 												<div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-													<div>
-														<img src="<c:url value='/resources/img/image.png'/>" class="img-rounded" class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="answer.image" />
+														<div ng-hide="$flow.files.length">
+														<img class="img-rounded" src="<c:url value='/resources/img/image.png'/>" width="200px" height="110px" />
+													</div>
+													<div ng-show="$flow.files.length">
+														<img class="img-rounded" flow-img="$flow.files[0]" width="200px" height="110px" ng-model="answer.image" />
 													</div>
 													<div>
 														<button class="btn btn-danger btn-xs btn-round" ng-show="!$flow.files.length" flow-btn>

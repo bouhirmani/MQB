@@ -49,6 +49,12 @@
        <put-attribute name="body" value="/WEB-INF/views/quiz/form-formulaire.jsp" />  
    </definition>  
    
+   <!-- Form Offre Page -->
+   <definition name="offre" extends="base-definition">  
+       <put-attribute name="title" value="Offre" />  
+       <put-attribute name="body" value="/WEB-INF/views/quiz/form-offre.jsp" />  
+   </definition>  
+   
       
       
  
